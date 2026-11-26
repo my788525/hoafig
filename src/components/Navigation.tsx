@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const NAV_LINKS = [
+  { href: '/wizard/', label: 'Dispute Wizard' },
   { href: '/calculators/hoa-fine-compliance/', label: 'Fine Checker' },
   { href: '/calculators/special-assessment-calculator/', label: 'Special Assessments' },
   { href: '/calculators/hoa-late-fee-auditor/', label: 'Late Fee Auditor' },

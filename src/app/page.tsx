@@ -71,14 +71,20 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
               <Link
-                href="/calculators/hoa-fine-compliance/"
+                href="/wizard/"
                 className="px-6 py-3.5 rounded-xl bg-[#c8a24a] hover:bg-[#e2c275] text-[#091a32] font-extrabold text-sm text-center transition shadow-lg"
               >
-                Run HOA Fine Compliance Audit →
+                Start 4-Step Dispute Wizard →
+              </Link>
+              <Link
+                href="/calculators/hoa-fine-compliance/"
+                className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-sm text-center transition"
+              >
+                Run Fine Compliance Audit
               </Link>
               <Link
                 href="/states/"
-                className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-sm text-center transition"
+                className="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-slate-200 font-semibold text-sm text-center transition"
               >
                 Browse 51 State Statutes
               </Link>
@@ -133,6 +139,26 @@ export default function HomePage() {
             View All Calculators →
           </Link>
         </div>
+
+        <Link
+          href="/wizard/"
+          className="brief-card p-5 sm:p-6 border-2 border-[#c8a24a]/60 bg-gradient-to-r from-[#0f2747] to-[#1a3b68] text-white hover:border-[#c8a24a] transition flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+        >
+          <div className="space-y-1">
+            <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#c8a24a] text-[#091a32]">
+              Flagship 4-Step Guided Flow
+            </span>
+            <h3 className="text-lg sm:text-xl font-extrabold text-white">
+              HOA Dispute &amp; Board Hearing Strategy Wizard
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-200 max-w-2xl">
+              Not sure where to start? Answer 4 quick steps on your state, financial exposure, and procedural defects to generate a free printable Board Hearing Brief.
+            </p>
+          </div>
+          <span className="px-5 py-3 rounded-xl bg-[#c8a24a] text-[#091a32] font-extrabold text-xs shrink-0 text-center">
+            Launch Wizard →
+          </span>
+        </Link>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {CALCULATORS.map((c) => (

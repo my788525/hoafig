@@ -10,6 +10,7 @@ const BASE = 'https://hoafig.com';
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
+    '/wizard/',
     '/calculators/',
     '/calculators/hoa-fine-compliance/',
     '/calculators/special-assessment-calculator/',
@@ -30,8 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = staticRoutes.map((r) => ({
     url: BASE + (r || '/'),
     lastModified: '2026-11-01',
-    changeFrequency: r === '' ? 'daily' : r.startsWith('/calculators/') ? 'weekly' : 'monthly',
-    priority: r === '' ? 1.0 : r.startsWith('/calculators/') ? 0.9 : 0.8
+    changeFrequency: r === '' ? 'daily' : r === '/wizard/' || r.startsWith('/calculators/') ? 'weekly' : 'monthly',
+    priority: r === '' ? 1.0 : r === '/wizard/' ? 0.95 : r.startsWith('/calculators/') ? 0.9 : 0.8
   }));
 
   const stateRoutes: MetadataRoute.Sitemap = HOA_STATUTES_2026.map((s) => ({
