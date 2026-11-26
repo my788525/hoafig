@@ -4,6 +4,7 @@ import { HOA_STATUTES_2026 } from '@/data/hoa_statutes_2026';
 import { HOA_CASES } from '@/data/cases';
 import { HOA_GUIDES } from '@/data/guides';
 import ToolPaywallDossier from '@/components/ToolPaywallDossier';
+import HiddenTrapsCallout from '@/components/HiddenTrapsCallout';
 import { JsonLd, datasetJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -195,6 +196,11 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Contextual 3-Trap Survival Callout */}
+      <div className="container-exec">
+        <HiddenTrapsCallout />
+      </div>
 
       {/* Inline Offer at ~35-40% Scroll Depth (Right After Core Tool Showcase) */}
       <div className="container-exec">

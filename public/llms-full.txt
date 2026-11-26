@@ -4,7 +4,7 @@
 
 This is the machine-readable companion to https://hoafig.com/llms.txt.
 Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.txt · https://hoafig.com/sitemap.xml
-## Complete page index (79 pages)
+## Complete page index (80 pages)
 
 ### Home
 - [HOAFig — U.S. HOA Fine Compliance, Special Assessment & Board Hearing Defense](https://hoafig.com/)
@@ -44,6 +44,9 @@ Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.t
 
 ### /methodology
 - [Statutory Audit Methodology & Data Verification | HOAFig](https://hoafig.com/methodology/)
+
+### /pitfalls
+- [HOA Pitfalls, Black Holes & Homeowner Survival Playbook (2026) | HOAFig](https://hoafig.com/pitfalls/)
 
 ### /privacy
 - [Privacy Policy | HOAFig](https://hoafig.com/privacy/)

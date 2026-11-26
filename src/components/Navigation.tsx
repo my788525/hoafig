@@ -13,7 +13,8 @@ const NAV_LINKS = [
   { href: '/calculators/ccr-preemption-checker/', label: 'CC&R Preemption' },
   { href: '/states/', label: '51 State Laws' },
   { href: '/cases/', label: 'Case Studies' },
-  { href: '/guides/', label: 'Defense Guides' }
+  { href: '/guides/', label: 'Defense Guides' },
+  { href: '/pitfalls/', label: 'Pitfalls & Traps' }
 ];
 
 const UTILITY_LINKS = [

@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from 'react';
 import { HOA_STATUTES_2026, type HoaStatuteJurisdiction } from '@/data/hoa_statutes_2026';
 import ToolPaywallDossier from '@/components/ToolPaywallDossier';
+import HiddenTrapsCallout from '@/components/HiddenTrapsCallout';
 import IcsDeadlineButton from '@/components/IcsDeadlineButton';
 
 type DisputeCategory =
@@ -773,6 +774,9 @@ export default function HoaDisputeWizard() {
               <span>Prepared for Board / Fining Committee Submission</span>
             </div>
           </div>
+
+          {/* Contextual 3-Trap Survival Callout */}
+          <HiddenTrapsCallout />
 
           {/* Matched Dodo Digital Product via ToolPaywallDossier */}
           <ToolPaywallDossier
