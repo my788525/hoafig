@@ -5,6 +5,7 @@ import { HOA_STATUTES_2026, type HoaStatuteJurisdiction } from '@/data/hoa_statu
 import ToolPaywallDossier from '@/components/ToolPaywallDossier';
 import HiddenTrapsCallout from '@/components/HiddenTrapsCallout';
 import IcsDeadlineButton from '@/components/IcsDeadlineButton';
+import WizardLeadEscalation from '@/components/WizardLeadEscalation';
 
 type DisputeCategory =
   | 'HOA Violation Fine'
@@ -801,6 +802,14 @@ export default function HoaDisputeWizard() {
               </div>
             </div>
           </div>
+
+          <WizardLeadEscalation
+            stateAbbr={jurisdiction.abbr}
+            stateName={jurisdiction.name}
+            exposureAmount={amount}
+            summaryText={`${jurisdiction.name} (${jurisdiction.primaryStatute}) | Score: ${analysis.complianceScore}/100 (${analysis.defenseStrength}) | ${analysis.violations.join('; ')}`}
+            statuteCitation={jurisdiction.primaryStatute}
+          />
 
           {/* Matched Dodo Digital Product via ToolPaywallDossier */}
           <ToolPaywallDossier
