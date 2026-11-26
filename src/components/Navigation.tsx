@@ -9,6 +9,8 @@ const NAV_LINKS = [
   { href: '/calculators/special-assessment-calculator/', label: 'Special Assessments' },
   { href: '/calculators/hoa-late-fee-auditor/', label: 'Late Fee Auditor' },
   { href: '/calculators/arc-override-checker/', label: 'ARC Overrides' },
+  { href: '/calculators/selective-enforcement-analyzer/', label: 'Selective Enforcement' },
+  { href: '/calculators/ccr-preemption-checker/', label: 'CC&R Preemption' },
   { href: '/states/', label: '51 State Laws' },
   { href: '/cases/', label: 'Case Studies' },
   { href: '/guides/', label: 'Defense Guides' }

@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/calculators/special-assessment-calculator/',
     '/calculators/hoa-late-fee-auditor/',
     '/calculators/arc-override-checker/',
+    '/calculators/selective-enforcement-analyzer/',
+    '/calculators/ccr-preemption-checker/',
     '/states/',
     '/cases/',
     '/guides/',

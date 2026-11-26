@@ -4,7 +4,7 @@
 
 This is the machine-readable companion to https://hoafig.com/llms.txt.
 Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.txt · https://hoafig.com/sitemap.xml
-## Complete page index (77 pages)
+## Complete page index (79 pages)
 
 ### Home
 - [HOAFig — U.S. HOA Fine Compliance, Special Assessment & Board Hearing Defense](https://hoafig.com/)
@@ -15,8 +15,10 @@ Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.t
 ### /calculators
 - [HOA Statutory Compliance Calculators & Auditors (2026) | HOAFig](https://hoafig.com/calculators/)
 - [HOA Solar, EV Charger & FCC OTARD Override Checker (2026) | HOAFig](https://hoafig.com/calculators/arc-override-checker/)
+- [HOA CC&R vs. State & Federal Law Preemption Checker (2026) | HOAFig](https://hoafig.com/calculators/ccr-preemption-checker/)
 - [HOA Fine Compliance & Statutory Cap Checker (2026) | HOAFig](https://hoafig.com/calculators/hoa-fine-compliance/)
 - [HOA Late Fee & Payment Priority Auditor (2026) | HOAFig](https://hoafig.com/calculators/hoa-late-fee-auditor/)
+- [HOA Violation Notice & Selective Enforcement Forensics Analyzer (2026) | HOAFig](https://hoafig.com/calculators/selective-enforcement-analyzer/)
 - [HOA Special Assessment & Reserve Shortfall Calculator (2026) | HOAFig](https://hoafig.com/calculators/special-assessment-calculator/)
 
 ### /cases

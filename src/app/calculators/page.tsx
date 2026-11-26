@@ -33,6 +33,18 @@ const TOOLS = [
     title: 'ARC Solar, EV Charger & FCC OTARD Override Checker',
     desc: 'Checks federal FCC OTARD (47 C.F.R. § 1.4000) and state Solar Access / EV Right-to-Charge preemption.',
     badge: 'Federal + State'
+  },
+  {
+    href: '/calculators/selective-enforcement-analyzer/',
+    title: 'HOA Violation Notice & Selective Enforcement Analyzer',
+    desc: 'Scores procedural voidability (0–100), unpenalized neighbor comparators, and generates a 5-point evidentiary checklist & .ics deadline.',
+    badge: 'Forensics'
+  },
+  {
+    href: '/calculators/ccr-preemption-checker/',
+    title: 'HOA CC&R vs. State & Federal Law Override Checker',
+    desc: 'Checks FCC OTARD, U.S. Flag Act, Solar, EV, Xeriscaping, and Right-to-Dry preemption across all 51 jurisdictions.',
+    badge: 'Preemption'
   }
 ];
 

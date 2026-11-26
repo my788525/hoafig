@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from 'react';
 import { HOA_STATUTES_2026, type HoaStatuteJurisdiction } from '@/data/hoa_statutes_2026';
 import ToolPaywallDossier from '@/components/ToolPaywallDossier';
+import IcsDeadlineButton from '@/components/IcsDeadlineButton';
 
 type DisputeCategory =
   | 'HOA Violation Fine'
@@ -669,6 +670,13 @@ export default function HoaDisputeWizard() {
               </div>
 
               <div className="no-print flex flex-wrap items-center gap-2">
+                <IcsDeadlineButton
+                  title={`HOA Cure/Hearing Deadline (${jurisdiction.abbr} — ${category})`}
+                  description={`Statutory cure/hearing response deadline under ${primaryAuthorityText}. Disputed exposure: $${amount.toLocaleString()}. Benchmark: ${jurisdiction.mandatoryNoticeDays}d notice / ${jurisdiction.mandatoryCureDays}d cure.`}
+                  daysFromNow={Math.max(1, noticeDays || jurisdiction.mandatoryCureDays || 14)}
+                  url="https://hoafig.com/wizard/"
+                  label="Export Deadline (.ics)"
+                />
                 <button
                   type="button"
                   onClick={handleCopySummary}
