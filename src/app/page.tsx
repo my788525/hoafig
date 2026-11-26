@@ -69,23 +69,23 @@ export default function HomePage() {
       />
 
       {/* Executive Hero */}
-      <section className="bg-[#0f2747] text-white border-b border-slate-800">
+      <section className="bg-gradient-to-br from-[#09221c] via-[#0c2921] to-[#0f332a] text-white border-b border-[#19473a]">
         <div className="container-exec py-12 sm:py-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#c8a24a]/15 border border-[#c8a24a]/40 text-[#e2c275] text-[11px] font-bold uppercase tracking-wider leading-snug">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#c8a24a]/15 border border-[#c8a24a]/45 text-[#e2c275] text-[11px] font-bold uppercase tracking-wider leading-snug">
               51 U.S. Jurisdictions · 2026 Primary Code Verified
             </div>
             <h1 className="mt-6 text-[28px] sm:text-5xl font-extrabold tracking-tight leading-[1.15] text-white">
               Audit Any HOA Fine, Special Assessment, or ARC Denial Against State Law.
             </h1>
-            <p className="mt-6 text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            <p className="mt-6 text-emerald-50/85 text-base sm:text-lg leading-relaxed max-w-2xl">
               An institutional-grade statutory compliance workbench for U.S. homeowners. Verify fine caps, mandatory cure windows, independent fining committees, and generate a printable{' '}
               <strong className="text-white">Board Hearing Brief &amp; Certified Mail Demand</strong> in 60 seconds.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
               <Link
                 href="/wizard/"
-                className="px-6 py-3.5 rounded-xl bg-[#c8a24a] hover:bg-[#e2c275] text-[#091a32] font-extrabold text-sm text-center transition shadow-lg"
+                className="px-6 py-3.5 rounded-xl bg-[#c8a24a] hover:bg-[#e2c275] text-[#09221c] font-extrabold text-sm text-center transition shadow-lg"
               >
                 Start 4-Step Dispute Wizard →
               </Link>
@@ -97,39 +97,39 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/states/"
-                className="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-slate-200 font-semibold text-sm text-center transition"
+                className="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-emerald-50/90 font-semibold text-sm text-center transition"
               >
                 Browse 51 State Statutes
               </Link>
             </div>
           </div>
 
-          <div className="lg:col-span-5 mt-2 lg:mt-0 bg-[#091a32] border border-slate-700/80 rounded-2xl p-5 sm:p-6 space-y-4 shadow-2xl">
-            <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-3">
+          <div className="lg:col-span-5 mt-2 lg:mt-0 bg-[#09221c]/95 border border-[#19473a] rounded-2xl p-5 sm:p-6 space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between gap-2 border-b border-[#163d32] pb-3">
               <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-[#e2c275] font-bold">
                 2026 STATUTORY BENCHMARKS
               </span>
               <span className="text-[11px] font-semibold text-emerald-400 shrink-0">Live Verified</span>
             </div>
             <div className="space-y-2 text-xs font-mono">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-slate-800/80">
-                <span className="text-slate-300">California (Cal. Civ. Code § 5850)</span>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-[#163d32]">
+                <span className="text-emerald-50/85">California (Cal. Civ. Code § 5850)</span>
                 <span className="text-emerald-400 font-bold tabular-nums shrink-0">$100 Cap · 0% Interest</span>
               </div>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-slate-800/80">
-                <span className="text-slate-300">Florida (Fla. Stat. § 720.305)</span>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-[#163d32]">
+                <span className="text-emerald-50/85">Florida (Fla. Stat. § 720.305)</span>
                 <span className="text-emerald-400 font-bold tabular-nums shrink-0">$1,000 Cap · 3-Member Comm.</span>
               </div>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-slate-800/80">
-                <span className="text-slate-300">Texas (Tex. Prop. Code § 209.006)</span>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-[#163d32]">
+                <span className="text-emerald-50/85">Texas (Tex. Prop. Code § 209.006)</span>
                 <span className="text-emerald-400 font-bold tabular-nums shrink-0">Cert. Mail · 30d Hearing</span>
               </div>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-slate-800/80">
-                <span className="text-slate-300">Colorado (C.R.S. § 38-33.3-209.5)</span>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-[#163d32]">
+                <span className="text-emerald-50/85">Colorado (C.R.S. § 38-33.3-209.5)</span>
                 <span className="text-emerald-400 font-bold tabular-nums shrink-0">$500 Cap · Two 30d Cures</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2">
-                <span className="text-slate-300">Nevada (NRS § 116.31031)</span>
+                <span className="text-emerald-50/85">Nevada (NRS § 116.31031)</span>
                 <span className="text-emerald-400 font-bold tabular-nums shrink-0">$100 / $1,000 · 14d Cure</span>
               </div>
             </div>
@@ -141,34 +141,34 @@ export default function HomePage() {
       <section className="container-exec space-y-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f2747]">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0c2921]">
               Executive HOA Compliance Workbenches
             </h2>
             <p className="text-sm text-slate-600 mt-1">
               100% client-side computation with printable Hearing Briefs and Certified Mail templates.
             </p>
           </div>
-          <Link href="/calculators/" className="text-xs font-bold text-[#0f2747] underline">
+          <Link href="/calculators/" className="text-xs font-bold text-[#0c2921] underline">
             View All Calculators →
           </Link>
         </div>
 
         <Link
           href="/wizard/"
-          className="brief-card p-5 sm:p-6 border-2 border-[#c8a24a]/60 bg-gradient-to-r from-[#0f2747] to-[#1a3b68] text-white hover:border-[#c8a24a] transition flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+          className="brief-card p-5 sm:p-6 border-2 border-[#c8a24a]/60 bg-gradient-to-r from-[#09221c] to-[#0f332a] text-white hover:border-[#c8a24a] transition flex flex-col sm:flex-row sm:items-center justify-between gap-4"
         >
           <div className="space-y-1">
-            <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#c8a24a] text-[#091a32]">
+            <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#c8a24a] text-[#09221c]">
               Flagship 4-Step Guided Flow
             </span>
             <h3 className="text-lg sm:text-xl font-extrabold text-white">
               HOA Dispute &amp; Board Hearing Strategy Wizard
             </h3>
-            <p className="text-xs sm:text-sm text-slate-200 max-w-2xl">
+            <p className="text-xs sm:text-sm text-emerald-50/85 max-w-2xl">
               Not sure where to start? Answer 4 quick steps on your state, financial exposure, and procedural defects to generate a free printable Board Hearing Brief.
             </p>
           </div>
-          <span className="px-5 py-3 rounded-xl bg-[#c8a24a] text-[#091a32] font-extrabold text-xs shrink-0 text-center">
+          <span className="px-5 py-3 rounded-xl bg-[#c8a24a] text-[#09221c] font-extrabold text-xs shrink-0 text-center">
             Launch Wizard →
           </span>
         </Link>
@@ -178,13 +178,13 @@ export default function HomePage() {
             <Link
               key={c.href}
               href={c.href}
-              className="brief-card p-5 sm:p-6 hover:border-[#0f2747] transition group flex flex-col justify-between gap-4 min-w-0"
+              className="brief-card p-5 sm:p-6 hover:border-[#0c2921] transition group flex flex-col justify-between gap-4 min-w-0"
             >
               <div className="space-y-2">
-                <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-[#0f2747]/10 text-[#0f2747]">
+                <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-[#0c2921]/10 text-[#0c2921]">
                   {c.tag}
                 </span>
-                <h3 className="text-lg font-extrabold text-[#0f2747] group-hover:text-[#1a3b68]">
+                <h3 className="text-lg font-extrabold text-[#0c2921] group-hover:text-[#0f332a]">
                   {c.title}
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{c.desc}</p>
@@ -221,14 +221,14 @@ export default function HomePage() {
       <section className="container-exec space-y-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-extrabold text-[#0f2747]">
+            <h2 className="text-2xl font-extrabold text-[#0c2921]">
               51-Jurisdiction Statutory Fine Cap Directory
             </h2>
             <p className="text-sm text-slate-600 mt-1">
               Primary `.gov` statutory citations, cure periods, and solar/EV override rules.
             </p>
           </div>
-          <Link href="/states/" className="text-xs font-bold text-[#0f2747] underline">
+          <Link href="/states/" className="text-xs font-bold text-[#0c2921] underline">
             All 50 States + D.C. →
           </Link>
         </div>
@@ -238,10 +238,10 @@ export default function HomePage() {
             <Link
               key={s.abbr}
               href={`/states/${s.slug}/`}
-              className="brief-card p-4 hover:border-[#0f2747] transition space-y-2"
+              className="brief-card p-4 hover:border-[#0c2921] transition space-y-2"
             >
               <div className="flex items-center justify-between">
-                <span className="font-extrabold text-[#0f2747]">{s.name}</span>
+                <span className="font-extrabold text-[#0c2921]">{s.name}</span>
                 <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">
                   {s.abbr}
                 </span>
@@ -263,12 +263,12 @@ export default function HomePage() {
       <section className="container-exec space-y-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-extrabold text-[#0f2747]">Real-Ledger Case Studies</h2>
+            <h2 className="text-2xl font-extrabold text-[#0c2921]">Real-Ledger Case Studies</h2>
             <p className="text-sm text-slate-600 mt-1">
               Line-by-line statutory audits showing how unlawful HOA fines and fee stacking were voided.
             </p>
           </div>
-          <Link href="/cases/" className="text-xs font-bold text-[#0f2747] underline">
+          <Link href="/cases/" className="text-xs font-bold text-[#0c2921] underline">
             All Case Studies →
           </Link>
         </div>
@@ -278,13 +278,13 @@ export default function HomePage() {
             <Link
               key={c.slug}
               href={`/cases/${c.slug}/`}
-              className="brief-card p-5 hover:border-[#0f2747] transition space-y-3"
+              className="brief-card p-5 hover:border-[#0c2921] transition space-y-3"
             >
               <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-[#0f2747]">{c.stateName}</span>
+                <span className="font-bold text-[#0c2921]">{c.stateName}</span>
                 <span className="font-mono font-bold text-[#059669] tabular-nums">{c.finalOutcome}</span>
               </div>
-              <h3 className="text-base font-extrabold text-[#0f2747] leading-snug">{c.title}</h3>
+              <h3 className="text-base font-extrabold text-[#0c2921] leading-snug">{c.title}</h3>
               <p className="text-xs text-slate-600 line-clamp-3">{c.summary}</p>
             </Link>
           ))}
@@ -295,12 +295,12 @@ export default function HomePage() {
       <section className="container-exec space-y-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-extrabold text-[#0f2747]">Homeowner Statutory Defense Guides</h2>
+            <h2 className="text-2xl font-extrabold text-[#0c2921]">Homeowner Statutory Defense Guides</h2>
             <p className="text-sm text-slate-600 mt-1">
               Deep-dive playbooks with Direct Answer tables and primary legal citations.
             </p>
           </div>
-          <Link href="/guides/" className="text-xs font-bold text-[#0f2747] underline">
+          <Link href="/guides/" className="text-xs font-bold text-[#0c2921] underline">
             All 6 Guides →
           </Link>
         </div>
@@ -310,12 +310,12 @@ export default function HomePage() {
             <Link
               key={g.slug}
               href={`/guides/${g.slug}/`}
-              className="brief-card p-5 hover:border-[#0f2747] transition space-y-2"
+              className="brief-card p-5 hover:border-[#0c2921] transition space-y-2"
             >
               <div className="text-[11px] font-bold uppercase tracking-wider text-[#c8a24a]">
                 {g.category}
               </div>
-              <h3 className="text-base font-extrabold text-[#0f2747]">{g.shortTitle}</h3>
+              <h3 className="text-base font-extrabold text-[#0c2921]">{g.shortTitle}</h3>
               <p className="text-xs text-slate-600 line-clamp-2">{g.description}</p>
             </Link>
           ))}
