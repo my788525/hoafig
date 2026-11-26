@@ -260,15 +260,19 @@ export default function ToolPaywallDossier({
             ))}
           </div>
 
-          <div className="rounded-xl bg-[#091a32]/80 border border-slate-700/80 p-3.5 space-y-1.5 text-[11px] font-mono text-slate-300">
-            <div className="flex items-center justify-between text-emerald-400 font-bold border-b border-slate-800 pb-1">
-              <span>VIP Digital Hearing Defense Kit (All-Access Matrix Pass)</span>
-              <span className="text-slate-400">Benchmark HOA Attorney: <span className="line-through">$350+/hr</span></span>
+          <div className="rounded-xl bg-[#091a32]/80 border border-slate-700/80 p-3.5 space-y-2 text-[11px] font-mono text-slate-300">
+            <div className="flex flex-wrap items-center justify-between gap-2 text-emerald-400 font-bold border-b border-slate-800 pb-1.5">
+              <span>FREE BRIEF ABOVE vs. TURNKEY VIP DEFENSE KIT</span>
+              <span className="text-slate-400">HOA Attorney: <span className="line-through">$350+/hr</span></span>
             </div>
-            <div className="flex justify-between"><span>├── 01_Board_Hearing_Defense_Brief_2026.pdf</span><span className="text-slate-400">Printable</span></div>
-            <div className="flex justify-between text-[#e2c275]"><span>├── 02_Certified_Mail_Records_Demand_Template.docx</span><span className="text-[#c8a24a]">Editable Word</span></div>
-            <div className="flex justify-between text-sky-300"><span>├── 03_Reserve_&_Ledger_Audit_Workbook.xlsx</span><span className="text-sky-400">Live Formulas</span></div>
-            <div className="flex justify-between text-emerald-300"><span>└── 04_51_State_HOA_Statute_Citation_Matrix.pdf</span><span className="text-emerald-400">2026 Verified</span></div>
+            <div className="flex justify-between text-slate-400">
+              <span>✓ Free Tier: Printable Hearing Brief + Violation Summary</span>
+              <span className="text-emerald-400 font-semibold">Included ($0)</span>
+            </div>
+            <div className="flex justify-between text-[#e2c275]"><span>├── 01_Certified_Mail_Hearing_&_Records_Request.docx</span><span className="text-[#c8a24a]">Editable Word</span></div>
+            <div className="flex justify-between text-[#e2c275]"><span>├── 02_Selective_Enforcement_&_CC&amp;R_Exhibit_Log.docx</span><span className="text-[#c8a24a]">Defense Log</span></div>
+            <div className="flex justify-between text-sky-300"><span>├── 03_HOA_Ledger_&_Reserve_Audit_Workbook.xlsx</span><span className="text-sky-400">Live Formulas</span></div>
+            <div className="flex justify-between text-emerald-300"><span>└── 04_51_State_HOA_Statute_Citation_Matrix_2026.pdf</span><span className="text-emerald-400">2026 Verified</span></div>
           </div>
 
           <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">

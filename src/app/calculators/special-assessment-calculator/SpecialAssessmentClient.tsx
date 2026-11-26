@@ -45,6 +45,7 @@ const PRESETS = [
 ];
 
 export default function SpecialAssessmentClient() {
+  const [mode, setMode] = useState<"quick" | "pro">("quick");
   const [stateAbbr, setStateAbbr] = useState("FL");
   const [projectName, setProjectName] = useState("Structural Roof & Balcony Concrete Restoration");
   const [totalProjectCost, setTotalProjectCost] = useState(2400000);
@@ -53,7 +54,10 @@ export default function SpecialAssessmentClient() {
   const [totalUnits, setTotalUnits] = useState(120);
   const [annualOperatingBudget, setAnnualOperatingBudget] = useState(960000);
   const [currentMonthlyDues, setCurrentMonthlyDues] = useState(665);
+  const [noticeDaysGiven, setNoticeDaysGiven] = useState(14);
   const [boardApprovedOnly, setBoardApprovedOnly] = useState(true);
+  const [competitiveBidsObtained, setCompetitiveBidsObtained] = useState(false);
+  const [reserveStudyCurrent, setReserveStudyCurrent] = useState(false);
 
   const jurisdiction = STATUTES_BY_ABBR[stateAbbr] || STATUTES_BY_ABBR["FL"];
 
@@ -81,6 +85,19 @@ export default function SpecialAssessmentClient() {
         ? "ALERT: May trigger 765 ILCS 605/18(a)(8) unit-owner petition right to call a veto vote."
         : `${jurisdiction.specialAssessmentVoteThreshold}`;
 
+    const noticeDeficit = noticeDaysGiven < jurisdiction.mandatoryNoticeDays;
+    const defenseScore = Math.min(
+      100,
+      Math.max(
+        15,
+        (boardApprovedOnly ? 30 : 10) +
+          (noticeDeficit ? 25 : 0) +
+          (!competitiveBidsObtained ? 20 : 0) +
+          (!reserveStudyCurrent ? 20 : 0) +
+          (pctOfAnnualBudget > 5 ? 15 : 0)
+      )
+    );
+
     return {
       reserveShortfall,
       perUnitAssessment,
@@ -90,6 +107,8 @@ export default function SpecialAssessmentClient() {
       newMonthlyTotal,
       duesSpikePct,
       voteTriggerNote,
+      noticeDeficit,
+      defenseScore,
     };
   }, [
     totalProjectCost,
@@ -98,8 +117,11 @@ export default function SpecialAssessmentClient() {
     totalUnits,
     annualOperatingBudget,
     currentMonthlyDues,
+    noticeDaysGiven,
     stateAbbr,
     boardApprovedOnly,
+    competitiveBidsObtained,
+    reserveStudyCurrent,
     jurisdiction,
   ]);
 
@@ -151,9 +173,35 @@ Sincerely,
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         <div className="lg:col-span-5 brief-card p-6 space-y-4 no-print">
-          <div className="border-b border-slate-200 pb-3">
-            <h2 className="text-base font-extrabold text-[#0f2747]">1. Reserve &amp; Project Inputs</h2>
-            <p className="text-xs text-slate-500">Estimate per-unit exposure and member vote triggers.</p>
+          <div className="border-b border-slate-200 pb-3 space-y-3">
+            <div>
+              <h2 className="text-base font-extrabold text-[#0f2747]">1. Reserve &amp; Project Inputs</h2>
+              <p className="text-xs text-slate-500">Estimate per-unit exposure and member vote triggers.</p>
+            </div>
+            <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200">
+              <button
+                type="button"
+                onClick={() => setMode("quick")}
+                className={`py-2 px-3 rounded-lg text-xs font-extrabold transition cursor-pointer ${
+                  mode === "quick"
+                    ? "bg-[#0f2747] text-white shadow-sm"
+                    : "text-slate-600 hover:text-[#0f2747]"
+                }`}
+              >
+                Quick Check (30s)
+              </button>
+              <button
+                type="button"
+                onClick={() => setMode("pro")}
+                className={`py-2 px-3 rounded-lg text-xs font-extrabold transition cursor-pointer ${
+                  mode === "pro"
+                    ? "bg-[#0f2747] text-white shadow-sm"
+                    : "text-slate-600 hover:text-[#0f2747]"
+                }`}
+              >
+                Forensic Pro Audit
+              </button>
+            </div>
           </div>
 
           <div>
@@ -171,96 +219,171 @@ Sincerely,
             </select>
           </div>
 
-          <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1">Capital Project Name</label>
-            <input
-              type="text"
-              value={projectName}
-              onChange={(e) => setProjectName(e.target.value)}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
-            />
-          </div>
+          {mode === "quick" ? (
+            <div className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  Proposed Assessment / Project Cost ($)
+                </label>
+                <input
+                  type="number"
+                  min={0}
+                  value={totalProjectCost}
+                  onChange={(e) => setTotalProjectCost(Number(e.target.value) || 0)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
+                />
+              </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Total Project Cost ($)</label>
-              <input
-                type="number"
-                min={0}
-                value={totalProjectCost}
-                onChange={(e) => setTotalProjectCost(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Current Reserves ($)</label>
-              <input
-                type="number"
-                min={0}
-                value={currentReserveBalance}
-                onChange={(e) => setCurrentReserveBalance(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
-              />
-            </div>
-          </div>
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  Notice / Vote Window Given (Days)
+                </label>
+                <input
+                  type="number"
+                  min={0}
+                  value={noticeDaysGiven}
+                  onChange={(e) => setNoticeDaysGiven(Number(e.target.value) || 0)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
+                />
+              </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Reserve Target ($)</label>
-              <input
-                type="number"
-                min={0}
-                value={recommendedReserveTarget}
-                onChange={(e) => setRecommendedReserveTarget(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
-              />
+              <button
+                type="button"
+                onClick={() => setMode("pro")}
+                className="w-full py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-xs font-bold text-[#0f2747] transition cursor-pointer"
+              >
+                Switch to Forensic Pro Audit (Reserves, Units, Bids &amp; Ratification Score) →
+              </button>
             </div>
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Total Units / Lots</label>
-              <input
-                type="number"
-                min={1}
-                value={totalUnits}
-                onChange={(e) => setTotalUnits(Number(e.target.value) || 1)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
-              />
-            </div>
-          </div>
+          ) : (
+            <>
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Capital Project Name</label>
+                <input
+                  type="text"
+                  value={projectName}
+                  onChange={(e) => setProjectName(e.target.value)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+                />
+              </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Annual HOA Budget ($)</label>
-              <input
-                type="number"
-                min={0}
-                value={annualOperatingBudget}
-                onChange={(e) => setAnnualOperatingBudget(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Current Monthly Dues ($)</label>
-              <input
-                type="number"
-                min={0}
-                value={currentMonthlyDues}
-                onChange={(e) => setCurrentMonthlyDues(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
-              />
-            </div>
-          </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Total Project Cost ($)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={totalProjectCost}
+                    onChange={(e) => setTotalProjectCost(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Current Reserves ($)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={currentReserveBalance}
+                    onChange={(e) => setCurrentReserveBalance(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                  />
+                </div>
+              </div>
 
-          <label className="flex items-center gap-2 text-xs cursor-pointer pt-1">
-            <input
-              type="checkbox"
-              checked={boardApprovedOnly}
-              onChange={(e) => setBoardApprovedOnly(e.target.checked)}
-              className="rounded border-slate-300"
-            />
-            <span className="font-medium text-slate-700">
-              Board Attempting Passage Without Homeowner Vote
-            </span>
-          </label>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Reserve Target ($)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={recommendedReserveTarget}
+                    onChange={(e) => setRecommendedReserveTarget(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Total Units / Lots</label>
+                  <input
+                    type="number"
+                    min={1}
+                    value={totalUnits}
+                    onChange={(e) => setTotalUnits(Number(e.target.value) || 1)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Annual HOA Budget ($)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={annualOperatingBudget}
+                    onChange={(e) => setAnnualOperatingBudget(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Current Monthly Dues ($)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={currentMonthlyDues}
+                    onChange={(e) => setCurrentMonthlyDues(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Notice / Vote Window (Days)</label>
+                <input
+                  type="number"
+                  min={0}
+                  value={noticeDaysGiven}
+                  onChange={(e) => setNoticeDaysGiven(Number(e.target.value) || 0)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                />
+              </div>
+
+              <div className="space-y-2 pt-2 border-t border-slate-100 text-xs">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={boardApprovedOnly}
+                    onChange={(e) => setBoardApprovedOnly(e.target.checked)}
+                    className="rounded border-slate-300"
+                  />
+                  <span className="font-medium text-slate-700">
+                    Board Attempting Passage Without Homeowner Vote
+                  </span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={competitiveBidsObtained}
+                    onChange={(e) => setCompetitiveBidsObtained(e.target.checked)}
+                    className="rounded border-slate-300"
+                  />
+                  <span className="font-medium text-slate-700">
+                    3+ Competitive Contractor Bids Disclosed
+                  </span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={reserveStudyCurrent}
+                    onChange={(e) => setReserveStudyCurrent(e.target.checked)}
+                    className="rounded border-slate-300"
+                  />
+                  <span className="font-medium text-slate-700">
+                    Current Reserve Study (Within 3 Years) Provided
+                  </span>
+                </label>
+              </div>
+            </>
+          )}
         </div>
 
         <div className="lg:col-span-7 space-y-6">
@@ -324,6 +447,15 @@ Sincerely,
               { label: "Net Shortfall", value: `$${calc.reserveShortfall.toLocaleString()}`, highlight: "warn" },
               { label: "Per-Unit Special Assessment", value: `$${calc.perUnitAssessment.toLocaleString()}`, highlight: "danger" },
               { label: "Assessment as % of Annual Budget", value: `${calc.pctOfAnnualBudget.toFixed(1)}%` },
+              ...(mode === "pro"
+                ? [
+                    {
+                      label: "Statutory Ratification & Reserve Defense Score",
+                      value: `${calc.defenseScore} / 100`,
+                      highlight: (calc.defenseScore >= 65 ? "ok" : "warn") as "ok" | "warn",
+                    },
+                  ]
+                : []),
             ]}
             letterText={letterText}
           />

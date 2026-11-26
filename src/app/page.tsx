@@ -158,6 +158,21 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Inline Offer at ~35-40% Scroll Depth (Right After Core Tool Showcase) */}
+      <div className="container-exec">
+        <ToolPaywallDossier
+          badge="All-Access Matrix Pass"
+          title="Unlock the Complete 2026 HOA Hearing Defense & Ledger Audit Suite"
+          desc="Download editable Word (.DOCX) Certified Mail demand letters, 51-state fine cap citations, and reserve study audit workbooks."
+          features={[
+            'Editable Certified Mail Demand Letters',
+            '51-State Statutory Citation Matrix',
+            'Reserve & Ledger Audit Excel Workbook',
+            'Printable Unwatermarked Hearing Briefs'
+          ]}
+        />
+      </div>
+
       {/* State Spotlight */}
       <section className="container-exec space-y-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
@@ -262,20 +277,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      <div className="container-exec">
-        <ToolPaywallDossier
-          badge="All-Access Matrix Pass"
-          title="Unlock the Complete 2026 HOA Hearing Defense & Ledger Audit Suite"
-          desc="Download editable Word (.DOCX) Certified Mail demand letters, 51-state fine cap citations, and reserve study audit workbooks."
-          features={[
-            'Editable Certified Mail Demand Letters',
-            '51-State Statutory Citation Matrix',
-            'Reserve & Ledger Audit Excel Workbook',
-            'Printable Unwatermarked Hearing Briefs'
-          ]}
-        />
-      </div>
     </div>
   );
 }

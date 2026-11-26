@@ -62,6 +62,7 @@ const PRESETS: Preset[] = [
 ];
 
 export default function HoaFineComplianceClient() {
+  const [mode, setMode] = useState<"quick" | "pro">("quick");
   const [stateAbbr, setStateAbbr] = useState("FL");
   const [violationType, setViolationType] = useState("Driveway Paver Border (Non-Safety)");
   const [fineBilled, setFineBilled] = useState(2400);
@@ -72,6 +73,8 @@ export default function HoaFineComplianceClient() {
   const [cureDaysGiven, setCureDaysGiven] = useState(7);
   const [independentCommitteeUsed, setIndependentCommitteeUsed] = useState(false);
   const [certifiedMailSent, setCertifiedMailSent] = useState(false);
+  const [similarViolationsUnfined, setSimilarViolationsUnfined] = useState(true);
+  const [ccrFineScheduleMissing, setCcrFineScheduleMissing] = useState(false);
 
   const applyPreset = (p: Preset) => {
     setStateAbbr(p.stateAbbr);
@@ -109,22 +112,22 @@ export default function HoaFineComplianceClient() {
       maxLawfulFine = Math.min(maxLawfulFine, jurisdiction.perViolationCapUsd);
     }
 
-    // 2. Daily accrual cap check
-    if (jurisdiction.dailyAccrualCapUsd !== null && dailyRate > jurisdiction.dailyAccrualCapUsd) {
+    // 2. Daily accrual cap check (Pro)
+    if (mode === "pro" && jurisdiction.dailyAccrualCapUsd !== null && dailyRate > jurisdiction.dailyAccrualCapUsd) {
       defects.push(
         `Daily accrual rate ($${dailyRate}/day) exceeds statutory limit of $${jurisdiction.dailyAccrualCapUsd}/day.`
       );
     }
 
-    // 3. Late fee / interest stacking on fines
-    if (lateFeeAndInterest > 0 && !jurisdiction.lateFeesOnFinesAllowed) {
+    // 3. Late fee / interest stacking on fines (Pro)
+    if (mode === "pro" && lateFeeAndInterest > 0 && !jurisdiction.lateFeesOnFinesAllowed) {
       defects.push(
         `Illegal fee/interest stacking: $${lateFeeAndInterest.toLocaleString()} in late fees or interest cannot be assessed on disputed fines in ${jurisdiction.name}.`
       );
     }
 
-    // 4. Independent committee requirement
-    if (jurisdiction.independentCommitteeRequired && !independentCommitteeUsed) {
+    // 4. Independent committee requirement (Pro)
+    if (mode === "pro" && jurisdiction.independentCommitteeRequired && !independentCommitteeUsed) {
       defects.push(
         `Per se void: ${jurisdiction.name} requires an independent 3-member non-board fining committee / impartial decision-maker (${jurisdiction.primaryStatute}).`
       );
@@ -147,16 +150,40 @@ export default function HoaFineComplianceClient() {
       maxLawfulFine = 0;
     }
 
-    // 7. Certified mail requirement
-    if (jurisdiction.certifiedMailRequired && !certifiedMailSent) {
+    // 7. Certified mail requirement (Pro)
+    if (mode === "pro" && jurisdiction.certifiedMailRequired && !certifiedMailSent) {
       defects.push(
         `Defective service: ${jurisdiction.name} mandates Certified Mail / verified mail notice prior to fining (${jurisdiction.primaryStatute}).`
       );
       maxLawfulFine = 0;
     }
 
-    const totalBilled = fineBilled + lateFeeAndInterest;
+    // 8. Selective enforcement & CC&R authorization (Pro)
+    if (mode === "pro" && similarViolationsUnfined) {
+      defects.push(
+        `Selective / arbitrary enforcement defense: Unfined comparable lots create a prima facie defense against arbitrary board enforcement.`
+      );
+    }
+    if (mode === "pro" && ccrFineScheduleMissing) {
+      defects.push(
+        `CC&R / Fine Schedule defect: Fines are unenforceable unless authorized by a duly adopted and published fine schedule.`
+      );
+      maxLawfulFine = 0;
+    }
+
+    const effectiveLateFees = mode === "pro" ? lateFeeAndInterest : 0;
+    const totalBilled = fineBilled + effectiveLateFees;
     const unlawfulExcess = Math.max(0, totalBilled - maxLawfulFine);
+    const defenseScore = Math.min(
+      100,
+      Math.max(
+        15,
+        defects.length * 18 +
+          (unlawfulExcess > 0 ? 20 : 0) +
+          (mode === "pro" && similarViolationsUnfined ? 14 : 0) +
+          (mode === "pro" && ccrFineScheduleMissing ? 16 : 0)
+      )
+    );
     const status =
       defects.length === 0
         ? "COMPLIANT"
@@ -169,9 +196,11 @@ export default function HoaFineComplianceClient() {
       totalBilled,
       maxLawfulFine,
       unlawfulExcess,
+      defenseScore,
       status,
     };
   }, [
+    mode,
     jurisdiction,
     fineBilled,
     dailyRate,
@@ -181,6 +210,8 @@ export default function HoaFineComplianceClient() {
     cureDaysGiven,
     independentCommitteeUsed,
     certifiedMailSent,
+    similarViolationsUnfined,
+    ccrFineScheduleMissing,
   ]);
 
   const letterText = `VIA CERTIFIED MAIL & EMAIL
@@ -229,9 +260,36 @@ Sincerely,
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left: Inputs */}
         <div className="lg:col-span-5 brief-card p-6 space-y-4 no-print">
-          <div className="border-b border-slate-200 pb-3">
-            <h2 className="text-base font-extrabold text-[#0f2747]">1. Violation &amp; Ledger Inputs</h2>
-            <p className="text-xs text-slate-500">All checks run 100% locally in your browser.</p>
+          <div className="border-b border-slate-200 pb-3 space-y-3">
+            <div>
+              <h2 className="text-base font-extrabold text-[#0f2747]">1. Violation &amp; Ledger Inputs</h2>
+              <p className="text-xs text-slate-500">All checks run 100% locally in your browser.</p>
+            </div>
+            {/* Segmented Mode Toggle */}
+            <div className="grid grid-cols-2 gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200">
+              <button
+                type="button"
+                onClick={() => setMode("quick")}
+                className={`py-2 px-3 rounded-lg text-xs font-extrabold transition cursor-pointer ${
+                  mode === "quick"
+                    ? "bg-[#0f2747] text-white shadow-sm"
+                    : "text-slate-600 hover:text-[#0f2747]"
+                }`}
+              >
+                Quick Check (30s)
+              </button>
+              <button
+                type="button"
+                onClick={() => setMode("pro")}
+                className={`py-2 px-3 rounded-lg text-xs font-extrabold transition cursor-pointer ${
+                  mode === "pro"
+                    ? "bg-[#0f2747] text-white shadow-sm"
+                    : "text-slate-600 hover:text-[#0f2747]"
+                }`}
+              >
+                Forensic Pro Audit
+              </button>
+            </div>
           </div>
 
           <div>
@@ -249,109 +307,173 @@ Sincerely,
             </select>
           </div>
 
-          <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1">Alleged Violation Description</label>
-            <input
-              type="text"
-              value={violationType}
-              onChange={(e) => setViolationType(e.target.value)}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
-            />
-          </div>
+          {mode === "quick" ? (
+            <div className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Total Fine Billed ($)</label>
+                <input
+                  type="number"
+                  min={0}
+                  value={fineBilled}
+                  onChange={(e) => setFineBilled(Number(e.target.value) || 0)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
+                />
+              </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Total Fine Billed ($)</label>
-              <input
-                type="number"
-                min={0}
-                value={fineBilled}
-                onChange={(e) => setFineBilled(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Late Fees / Interest ($)</label>
-              <input
-                type="number"
-                min={0}
-                value={lateFeeAndInterest}
-                onChange={(e) => setLateFeeAndInterest(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
-              />
-            </div>
-          </div>
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  Cure / Hearing Notice Days Given (Days)
+                </label>
+                <input
+                  type="number"
+                  min={0}
+                  value={noticeDaysGiven}
+                  onChange={(e) => {
+                    const v = Number(e.target.value) || 0;
+                    setNoticeDaysGiven(v);
+                    setCureDaysGiven(v);
+                  }}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
+                />
+              </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Daily Fine Rate ($/day)</label>
-              <input
-                type="number"
-                min={0}
-                value={dailyRate}
-                onChange={(e) => setDailyRate(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
-              />
+              <button
+                type="button"
+                onClick={() => setMode("pro")}
+                className="w-full py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-xs font-bold text-[#0f2747] transition cursor-pointer"
+              >
+                Switch to Forensic Pro Audit (Daily Rate, Late Fees, Committee &amp; Selective Enforcement) →
+              </button>
             </div>
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Days Accrued</label>
-              <input
-                type="number"
-                min={1}
-                value={daysAccrued}
-                onChange={(e) => setDaysAccrued(Number(e.target.value) || 1)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
-              />
-            </div>
-          </div>
+          ) : (
+            <>
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Alleged Violation Description</label>
+                <input
+                  type="text"
+                  value={violationType}
+                  onChange={(e) => setViolationType(e.target.value)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+                />
+              </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Hearing Notice (Days)</label>
-              <input
-                type="number"
-                min={0}
-                value={noticeDaysGiven}
-                onChange={(e) => setNoticeDaysGiven(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">Cure Window (Days)</label>
-              <input
-                type="number"
-                min={0}
-                value={cureDaysGiven}
-                onChange={(e) => setCureDaysGiven(Number(e.target.value) || 0)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
-              />
-            </div>
-          </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Total Fine Billed ($)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={fineBilled}
+                    onChange={(e) => setFineBilled(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Late Fees / Interest ($)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={lateFeeAndInterest}
+                    onChange={(e) => setLateFeeAndInterest(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums font-semibold"
+                  />
+                </div>
+              </div>
 
-          <div className="space-y-2 pt-2 border-t border-slate-100 text-xs">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={independentCommitteeUsed}
-                onChange={(e) => setIndependentCommitteeUsed(e.target.checked)}
-                className="rounded border-slate-300"
-              />
-              <span className="font-medium text-slate-700">
-                Approved by Independent Non-Board Fining Committee
-              </span>
-            </label>
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={certifiedMailSent}
-                onChange={(e) => setCertifiedMailSent(e.target.checked)}
-                className="rounded border-slate-300"
-              />
-              <span className="font-medium text-slate-700">
-                Delivered via Certified / Verified Mail
-              </span>
-            </label>
-          </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Daily Fine Rate ($/day)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={dailyRate}
+                    onChange={(e) => setDailyRate(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Days Accrued</label>
+                  <input
+                    type="number"
+                    min={1}
+                    value={daysAccrued}
+                    onChange={(e) => setDaysAccrued(Number(e.target.value) || 1)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Hearing Notice (Days)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={noticeDaysGiven}
+                    onChange={(e) => setNoticeDaysGiven(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Cure Window (Days)</label>
+                  <input
+                    type="number"
+                    min={0}
+                    value={cureDaysGiven}
+                    onChange={(e) => setCureDaysGiven(Number(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tabular-nums"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2 pt-2 border-t border-slate-100 text-xs">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={independentCommitteeUsed}
+                    onChange={(e) => setIndependentCommitteeUsed(e.target.checked)}
+                    className="rounded border-slate-300"
+                  />
+                  <span className="font-medium text-slate-700">
+                    Approved by Independent Non-Board Fining Committee
+                  </span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={certifiedMailSent}
+                    onChange={(e) => setCertifiedMailSent(e.target.checked)}
+                    className="rounded border-slate-300"
+                  />
+                  <span className="font-medium text-slate-700">
+                    Delivered via Certified / Verified Mail
+                  </span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={similarViolationsUnfined}
+                    onChange={(e) => setSimilarViolationsUnfined(e.target.checked)}
+                    className="rounded border-slate-300"
+                  />
+                  <span className="font-medium text-slate-700">
+                    Comparable Lots Unfined (Selective Enforcement)
+                  </span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={ccrFineScheduleMissing}
+                    onChange={(e) => setCcrFineScheduleMissing(e.target.checked)}
+                    className="rounded border-slate-300"
+                  />
+                  <span className="font-medium text-slate-700">
+                    No Recorded CC&amp;R Fine Schedule Provided
+                  </span>
+                </label>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Right: Live Statutory Audit */}
@@ -462,6 +584,15 @@ Sincerely,
                 label: "Statutory Notice / Cure Minimums",
                 value: `${jurisdiction.mandatoryNoticeDays}d notice / ${jurisdiction.mandatoryCureDays}d cure`,
               },
+              ...(mode === "pro"
+                ? [
+                    {
+                      label: "Selective Enforcement & CC&R Defense Score",
+                      value: `${audit.defenseScore} / 100`,
+                      highlight: (audit.defenseScore >= 70 ? "ok" : "warn") as "ok" | "warn",
+                    },
+                  ]
+                : []),
             ]}
             letterText={letterText}
           />

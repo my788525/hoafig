@@ -95,6 +95,20 @@ export default async function CaseDetailPage({
         </div>
       </div>
 
+      {/* Inline Offer at ~35-40% Scroll Depth */}
+      <ToolPaywallDossier
+        badge="Case Study Kit"
+        title={`Download ${c.stateName} Hearing Defense Brief & Certified Mail Demand`}
+        desc="Includes the exact statutory demand letter structure and ledger audit workbook used in this case."
+        dynamicAmount={`$${c.savingsUsd.toLocaleString()} Saved`}
+        features={[
+          `${c.stateName} Certified Mail Demand (.DOCX)`,
+          'Forensic Ledger Audit Spreadsheet',
+          'Independent Committee Records Request',
+          '51-State Statutory Citation Matrix'
+        ]}
+      />
+
       {/* Resolution Timeline & Strategy */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-6 brief-card p-6 space-y-4">
@@ -131,18 +145,18 @@ export default async function CaseDetailPage({
         </div>
       </div>
 
-      <ToolPaywallDossier
-        badge="Case Study Kit"
-        title={`Download ${c.stateName} Hearing Defense Brief & Certified Mail Demand`}
-        desc="Includes the exact statutory demand letter structure and ledger audit workbook used in this case."
-        dynamicAmount={`$${c.savingsUsd.toLocaleString()} Saved`}
-        features={[
-          `${c.stateName} Certified Mail Demand (.DOCX)`,
-          'Forensic Ledger Audit Spreadsheet',
-          'Independent Committee Records Request',
-          '51-State Statutory Citation Matrix'
-        ]}
-      />
+      {/* Visible FAQ Section */}
+      <section className="brief-card p-6 sm:p-8 space-y-4">
+        <h2 className="text-xl font-extrabold text-[#0f2747]">Case Study FAQs</h2>
+        <div className="divide-y divide-slate-200">
+          {c.faq.map((f, i) => (
+            <div key={i} className="py-4 first:pt-0 last:pb-0 space-y-1.5">
+              <h3 className="text-sm sm:text-base font-bold text-[#0f2747]">{f.q}</h3>
+              <p className="text-sm text-slate-700 leading-relaxed">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

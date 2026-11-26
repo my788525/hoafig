@@ -60,10 +60,32 @@ export default async function GuideDetailPage({
 
         <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0f2747] leading-tight">{g.title}</h1>
         <p className="text-slate-600 text-base leading-relaxed">{g.description}</p>
+
+        {/* Quick-Jump Anchor Pills */}
+        <nav aria-label="Guide sections" className="flex flex-wrap gap-2 pt-1">
+          <a href="#direct-answer" className="px-3 py-1 rounded-full text-xs font-bold bg-[#0f2747] text-white hover:bg-[#1a3b68] transition">
+            Direct Statutory Answer
+          </a>
+          {g.sections.map((sec, idx) => (
+            <a
+              key={idx}
+              href={`#sec-${idx}`}
+              className="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-[#0f2747] hover:bg-slate-200 transition"
+            >
+              {sec.heading}
+            </a>
+          ))}
+          <a href="#defense-kit" className="px-3 py-1 rounded-full text-xs font-bold bg-[#c8a24a]/20 text-[#0f2747] border border-[#c8a24a]/40 hover:bg-[#c8a24a]/30 transition">
+            Defense Kit
+          </a>
+          <a href="#faq" className="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-[#0f2747] hover:bg-slate-200 transition">
+            FAQs
+          </a>
+        </nav>
       </div>
 
       {/* Direct Answer Table */}
-      <div className="brief-card overflow-hidden">
+      <div id="direct-answer" className="brief-card overflow-hidden scroll-mt-20">
         <div className="px-6 py-4 bg-[#0f2747] text-white">
           <div className="text-[11px] font-mono uppercase tracking-wider text-[#e2c275] font-bold">
             DIRECT STATUTORY ANSWER
@@ -92,22 +114,40 @@ export default async function GuideDetailPage({
         </div>
       </div>
 
-      {/* Guide Sections */}
+      {/* Guide Sections with Offer Mounted at ~35-40% Scroll Depth */}
       <div className="space-y-6">
         {g.sections.map((sec, idx) => (
-          <section key={idx} className="brief-card p-6 sm:p-8 space-y-3">
-            <h2 className="text-xl font-extrabold text-[#0f2747]">{sec.heading}</h2>
-            {sec.body.map((p, j) => (
-              <p key={j} className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                {p}
-              </p>
-            ))}
-            {sec.callout && (
-              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs sm:text-sm text-amber-950 font-medium">
-                <strong>Practice Tip:</strong> {sec.callout}
+          <div key={idx} className="space-y-6">
+            <section id={`sec-${idx}`} className="brief-card p-6 sm:p-8 space-y-3 scroll-mt-20">
+              <h2 className="text-xl font-extrabold text-[#0f2747]">{sec.heading}</h2>
+              {sec.body.map((p, j) => (
+                <p key={j} className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                  {p}
+                </p>
+              ))}
+              {sec.callout && (
+                <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs sm:text-sm text-amber-950 font-medium">
+                  <strong>Practice Tip:</strong> {sec.callout}
+                </div>
+              )}
+            </section>
+
+            {idx === 0 && (
+              <div id="defense-kit" className="scroll-mt-20">
+                <ToolPaywallDossier
+                  badge="Defense Playbook Kit"
+                  title="Download Editable Hearing Briefs & Certified Mail Templates"
+                  desc="Get the complete 2026 HOA defense suite with Word (.DOCX) demand letters, Excel audit workbooks, and 51-state citations."
+                  features={[
+                    'Editable Certified Mail Templates (.DOCX)',
+                    'Selective Enforcement Exhibit Log',
+                    '51-State Statutory Citation Matrix',
+                    'Printable Hearing Brief PDF'
+                  ]}
+                />
               </div>
             )}
-          </section>
+          </div>
         ))}
       </div>
 
@@ -124,17 +164,18 @@ export default async function GuideDetailPage({
         </Link>
       </div>
 
-      <ToolPaywallDossier
-        badge="Defense Playbook Kit"
-        title="Download Editable Hearing Briefs & Certified Mail Templates"
-        desc="Get the complete 2026 HOA defense suite with Word (.DOCX) demand letters, Excel audit workbooks, and 51-state citations."
-        features={[
-          'Editable Certified Mail Templates (.DOCX)',
-          'Selective Enforcement Exhibit Log',
-          '51-State Statutory Citation Matrix',
-          'Printable Hearing Brief PDF'
-        ]}
-      />
+      {/* Visible FAQ Section for GEO & Bing */}
+      <section id="faq" className="brief-card p-6 sm:p-8 space-y-4 scroll-mt-20">
+        <h2 className="text-xl font-extrabold text-[#0f2747]">Frequently Asked Questions</h2>
+        <div className="divide-y divide-slate-200">
+          {g.faq.map((f, i) => (
+            <div key={i} className="py-4 first:pt-0 last:pb-0 space-y-1.5">
+              <h3 className="text-sm sm:text-base font-bold text-[#0f2747]">{f.q}</h3>
+              <p className="text-sm text-slate-700 leading-relaxed">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
