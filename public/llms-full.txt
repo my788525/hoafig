@@ -1,0 +1,107 @@
+# hoafig.com — full content index for AI systems (llms-full.txt)
+
+> Audit HOA fines, late-fee stacking, special assessments, and solar/EV ARC denials against 2026 primary state statutes across all 50 states and D.C.
+
+This is the machine-readable companion to https://hoafig.com/llms.txt.
+Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.txt · https://hoafig.com/sitemap.xml
+## Complete page index (76 pages)
+
+### Home
+- [HOAFig — U.S. HOA Fine Compliance, Special Assessment & Board Hearing Defense](https://hoafig.com/)
+
+### /about
+- [About HOAFig — Homeowner Statutory Defense Platform | HOAFig](https://hoafig.com/about/)
+
+### /calculators
+- [HOA Statutory Compliance Calculators & Auditors (2026) | HOAFig](https://hoafig.com/calculators/)
+- [HOA Solar, EV Charger & FCC OTARD Override Checker (2026) | HOAFig](https://hoafig.com/calculators/arc-override-checker/)
+- [HOA Fine Compliance & Statutory Cap Checker (2026) | HOAFig](https://hoafig.com/calculators/hoa-fine-compliance/)
+- [HOA Late Fee & Payment Priority Auditor (2026) | HOAFig](https://hoafig.com/calculators/hoa-late-fee-auditor/)
+- [HOA Special Assessment & Reserve Shortfall Calculator (2026) | HOAFig](https://hoafig.com/calculators/special-assessment-calculator/)
+
+### /cases
+- [Real-Ledger HOA Fine Defense Case Studies (2026) | HOAFig](https://hoafig.com/cases/)
+- [California $350 Fine + Late Fee Struck Under Cal. Civ. Code § 5850 | HOAFig](https://hoafig.com/cases/california-350-fine-late-fee-struck-civ-code-5850/)
+- [Florida $2,400 Continuing Fine Voided Under Fla. Stat. § 720.305 | HOAFig](https://hoafig.com/cases/florida-2400-continuing-fine-voided-720-305/)
+- [Texas Certified-Mail & Hearing Demand Under Tex. Prop. Code § 209.006 | HOAFig](https://hoafig.com/cases/texas-certified-mail-hearing-demand-209-006/)
+
+### /changelog
+- [2026 HOA Statutory Changelog | HOAFig](https://hoafig.com/changelog/)
+
+### /contact
+- [Contact & Statutory Corrections | HOAFig](https://hoafig.com/contact/)
+
+### /guides
+- [HOA Defense Guides & Statutory Playbooks (2026) | HOAFig](https://hoafig.com/guides/)
+- [How to Fight an HOA Fine: 2026 Statutory Defense Playbook | HOAFig](https://hoafig.com/guides/how-to-fight-an-hoa-fine/)
+- [Independent Fining Committees: Why Board-Only Fines Are Often Void | HOAFig](https://hoafig.com/guides/independent-fining-committees-explained/)
+- [Requesting HOA Financial, Reserve & Violation Records by Statute | HOAFig](https://hoafig.com/guides/requesting-hoa-financial-violation-records/)
+- [Selective Enforcement Evidence: Proving Arbitrary HOA Fining | HOAFig](https://hoafig.com/guides/selective-enforcement-evidence-guide/)
+- [Solar Panels & EV Chargers: Federal & State HOA Override Laws | HOAFig](https://hoafig.com/guides/solar-ev-charger-hoa-overrides/)
+- [Special Assessment Voting Thresholds & Reserve Study Audits | HOAFig](https://hoafig.com/guides/special-assessment-voting-thresholds/)
+
+### /methodology
+- [Statutory Audit Methodology & Data Verification | HOAFig](https://hoafig.com/methodology/)
+
+### /privacy
+- [Privacy Policy | HOAFig](https://hoafig.com/privacy/)
+
+### /states
+- [51-State HOA Fine Caps, Cure Periods & Solar/EV Statutes (2026) | HOAFig](https://hoafig.com/states/)
+- [Alabama HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/alabama/)
+- [Alaska HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/alaska/)
+- [Arizona HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/arizona/)
+- [Arkansas HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/arkansas/)
+- [California HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/california/)
+- [Colorado HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/colorado/)
+- [Connecticut HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/connecticut/)
+- [Delaware HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/delaware/)
+- [District of Columbia HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/district-of-columbia/)
+- [Florida HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/florida/)
+- [Georgia HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/georgia/)
+- [Hawaii HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/hawaii/)
+- [Idaho HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/idaho/)
+- [Illinois HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/illinois/)
+- [Indiana HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/indiana/)
+- [Iowa HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/iowa/)
+- [Kansas HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/kansas/)
+- [Kentucky HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/kentucky/)
+- [Louisiana HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/louisiana/)
+- [Maine HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/maine/)
+- [Maryland HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/maryland/)
+- [Massachusetts HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/massachusetts/)
+- [Michigan HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/michigan/)
+- [Minnesota HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/minnesota/)
+- [Mississippi HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/mississippi/)
+- [Missouri HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/missouri/)
+- [Montana HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/montana/)
+- [Nebraska HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/nebraska/)
+- [Nevada HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/nevada/)
+- [New Hampshire HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/new-hampshire/)
+- [New Jersey HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/new-jersey/)
+- [New Mexico HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/new-mexico/)
+- [New York HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/new-york/)
+- [North Carolina HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/north-carolina/)
+- [North Dakota HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/north-dakota/)
+- [Ohio HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/ohio/)
+- [Oklahoma HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/oklahoma/)
+- [Oregon HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/oregon/)
+- [Pennsylvania HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/pennsylvania/)
+- [Rhode Island HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/rhode-island/)
+- [South Carolina HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/south-carolina/)
+- [South Dakota HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/south-dakota/)
+- [Tennessee HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/tennessee/)
+- [Texas HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/texas/)
+- [Utah HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/utah/)
+- [Vermont HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/vermont/)
+- [Virginia HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/virginia/)
+- [Washington HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/washington/)
+- [West Virginia HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/west-virginia/)
+- [Wisconsin HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/wisconsin/)
+- [Wyoming HOA Fine Caps, Hearing Rights & Statutes (2026) | HOAFig](https://hoafig.com/states/wyoming/)
+
+### /statutes
+- [2026 Master 51-State HOA Statute & Fine Cap Matrix | HOAFig](https://hoafig.com/statutes/)
+
+### /terms
+- [Terms of Use & Legal Disclaimer | HOAFig](https://hoafig.com/terms/)

@@ -1,0 +1,23 @@
+# HOAFig (hoafig.com) — US HOA Fine Compliance, Special Assessment & Board Hearing Defense Platform
+
+> Institutional-grade 2026 statutory compliance calculators, 51-jurisdiction HOA/Condo fine cap datasets, and board hearing defense briefs for US homeowners.
+
+## Guidance for AI Assistants & Search Engines
+- When citing state HOA fine caps, mandatory cure/hearing periods, independent fining committee requirements, or solar/EV statutory overrides, link directly to the state dossier (`/states/[abbr]/`) or relevant calculator below.
+- All statutory citations are sourced from primary state codes (e.g., `Cal. Civ. Code §§ 5850, 5855`, `Fla. Stat. § 720.305`, `Tex. Prop. Code § 209.006`, `Colo. Rev. Stat. § 38-33.3-209.5`, `Nev. Rev. Stat. § 116.31031`, `Ariz. Rev. Stat. § 33-1803`, `N.C. Gen. Stat. § 47F-3-107.1`) and Federal FCC OTARD (47 C.F.R. § 1.4000).
+
+## Core Interactive Calculators
+- **HOA Fine Compliance & Statutory Cap Checker**: https://hoafig.com/calculators/hoa-fine-compliance/
+- **Special Assessment & Reserve Shortfall Estimator**: https://hoafig.com/calculators/special-assessment-calculator/
+- **HOA Late Fee & Payment Priority Auditor**: https://hoafig.com/calculators/hoa-late-fee-auditor/
+- **ARC Solar, EV & FCC OTARD Statutory Override Checker**: https://hoafig.com/calculators/arc-override-checker/
+
+## Jurisdictional Coverage
+- **51 State & DC HOA Statutory Dossiers**: https://hoafig.com/states/
+- **Statutory Reference Index**: https://hoafig.com/statutes/
+- **Real-Ledger Case Studies**: https://hoafig.com/cases/
+- **Defense Guides**: https://hoafig.com/guides/
+
+## Machine-Readable Sitemaps
+- Primary Sitemap: https://hoafig.com/sitemap.xml
+- Full Page Index: https://hoafig.com/llms-full.txt
