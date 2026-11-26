@@ -57,61 +57,61 @@ export default function HomePage() {
 
       {/* Executive Hero */}
       <section className="bg-[#0f2747] text-white border-b border-slate-800">
-        <div className="container-exec py-14 sm:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c8a24a]/15 border border-[#c8a24a]/40 text-[#e2c275] text-xs font-bold uppercase tracking-wider">
+        <div className="container-exec py-12 sm:py-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#c8a24a]/15 border border-[#c8a24a]/40 text-[#e2c275] text-[11px] font-bold uppercase tracking-wider leading-snug">
               51 U.S. Jurisdictions · 2026 Primary Code Verified
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white">
+            <h1 className="mt-6 text-[28px] sm:text-5xl font-extrabold tracking-tight leading-[1.15] text-white">
               Audit Any HOA Fine, Special Assessment, or ARC Denial Against State Law.
             </h1>
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            <p className="mt-6 text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
               An institutional-grade statutory compliance workbench for U.S. homeowners. Verify fine caps, mandatory cure windows, independent fining committees, and generate a printable{' '}
               <strong className="text-white">Board Hearing Brief &amp; Certified Mail Demand</strong> in 60 seconds.
             </p>
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
               <Link
                 href="/calculators/hoa-fine-compliance/"
-                className="px-6 py-3.5 rounded-xl bg-[#c8a24a] hover:bg-[#e2c275] text-[#091a32] font-extrabold text-sm transition shadow-lg"
+                className="px-6 py-3.5 rounded-xl bg-[#c8a24a] hover:bg-[#e2c275] text-[#091a32] font-extrabold text-sm text-center transition shadow-lg"
               >
                 Run HOA Fine Compliance Audit →
               </Link>
               <Link
                 href="/states/"
-                className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-sm transition"
+                className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-sm text-center transition"
               >
                 Browse 51 State Statutes
               </Link>
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-[#091a32] border border-slate-700/80 rounded-2xl p-6 space-y-4 shadow-2xl">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#e2c275] font-bold">
+          <div className="lg:col-span-5 mt-2 lg:mt-0 bg-[#091a32] border border-slate-700/80 rounded-2xl p-5 sm:p-6 space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-[#e2c275] font-bold">
                 2026 STATUTORY BENCHMARKS
               </span>
-              <span className="text-[11px] font-semibold text-emerald-400">Live Verified</span>
+              <span className="text-[11px] font-semibold text-emerald-400 shrink-0">Live Verified</span>
             </div>
-            <div className="space-y-2.5 text-xs font-mono">
-              <div className="flex justify-between py-1 border-b border-slate-800/80">
+            <div className="space-y-2 text-xs font-mono">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-slate-800/80">
                 <span className="text-slate-300">California (Cal. Civ. Code § 5850)</span>
-                <span className="text-emerald-400 font-bold tabular-nums">$100 Cap · 0% Interest</span>
+                <span className="text-emerald-400 font-bold tabular-nums shrink-0">$100 Cap · 0% Interest</span>
               </div>
-              <div className="flex justify-between py-1 border-b border-slate-800/80">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-slate-800/80">
                 <span className="text-slate-300">Florida (Fla. Stat. § 720.305)</span>
-                <span className="text-emerald-400 font-bold tabular-nums">$1,000 Cap · 3-Member Comm.</span>
+                <span className="text-emerald-400 font-bold tabular-nums shrink-0">$1,000 Cap · 3-Member Comm.</span>
               </div>
-              <div className="flex justify-between py-1 border-b border-slate-800/80">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-slate-800/80">
                 <span className="text-slate-300">Texas (Tex. Prop. Code § 209.006)</span>
-                <span className="text-emerald-400 font-bold tabular-nums">Cert. Mail · 30d Hearing</span>
+                <span className="text-emerald-400 font-bold tabular-nums shrink-0">Cert. Mail · 30d Hearing</span>
               </div>
-              <div className="flex justify-between py-1 border-b border-slate-800/80">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2 border-b border-slate-800/80">
                 <span className="text-slate-300">Colorado (C.R.S. § 38-33.3-209.5)</span>
-                <span className="text-emerald-400 font-bold tabular-nums">$500 Cap · Two 30d Cures</span>
+                <span className="text-emerald-400 font-bold tabular-nums shrink-0">$500 Cap · Two 30d Cures</span>
               </div>
-              <div className="flex justify-between py-1">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 py-2">
                 <span className="text-slate-300">Nevada (NRS § 116.31031)</span>
-                <span className="text-emerald-400 font-bold tabular-nums">$100 / $1,000 · 14d Cure</span>
+                <span className="text-emerald-400 font-bold tabular-nums shrink-0">$100 / $1,000 · 14d Cure</span>
               </div>
             </div>
           </div>
@@ -134,12 +134,12 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {CALCULATORS.map((c) => (
             <Link
               key={c.href}
               href={c.href}
-              className="brief-card p-6 hover:border-[#0f2747] transition group flex flex-col justify-between gap-4"
+              className="brief-card p-5 sm:p-6 hover:border-[#0f2747] transition group flex flex-col justify-between gap-4 min-w-0"
             >
               <div className="space-y-2">
                 <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-[#0f2747]/10 text-[#0f2747]">
