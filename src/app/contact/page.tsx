@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd, breadcrumbJsonLd } from '@/components/JsonLd';
+import ContactMessageForm from '@/components/ContactMessageForm';
 
 export const metadata: Metadata = {
   title: 'Contact & Statutory Corrections',
@@ -23,6 +24,8 @@ export default function ContactPage() {
         </span>
         <h1 className="text-3xl font-extrabold text-[#0f2747]">Contact &amp; Statutory Corrections</h1>
       </div>
+
+      <ContactMessageForm />
 
       <div className="brief-card p-6 sm:p-8 space-y-5 text-sm sm:text-base text-slate-700 leading-relaxed">
         <section className="space-y-2">
