@@ -70,6 +70,9 @@ export default function WizardPage() {
         <p className="text-slate-600 max-w-3xl text-sm sm:text-base">
           Walk through 4 guided steps to audit your HOA fine, ARC denial, special assessment, or late-fee ledger against 2026 state statutes—and generate a free printable Board Hearing Brief.
         </p>
+        <p className="text-xs text-slate-700 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 max-w-3xl">
+          <strong className="text-[#0c2921]">Ballpark vs. Exact Audit:</strong> General state fine caps only give a rough ballpark—exact daily-accrual caps, cure-window defects, payment-waterfall violations, and ARC preemption must be calculated interactively on-site below.
+        </p>
       </div>
 
       <HoaDisputeWizard />

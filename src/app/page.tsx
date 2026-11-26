@@ -155,7 +155,7 @@ export default function HomePage() {
 
         <Link
           href="/wizard/"
-          className="brief-card p-5 sm:p-6 border-2 border-[#c8a24a]/60 bg-gradient-to-r from-[#09221c] to-[#0f332a] text-white hover:border-[#c8a24a] transition flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+          className="rounded-2xl shadow-lg p-5 sm:p-6 border-2 border-[#c8a24a]/60 bg-gradient-to-r from-[#09221c] to-[#0f332a] text-white hover:border-[#c8a24a] transition flex flex-col sm:flex-row sm:items-center justify-between gap-4"
         >
           <div className="space-y-1">
             <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#c8a24a] text-[#09221c]">
