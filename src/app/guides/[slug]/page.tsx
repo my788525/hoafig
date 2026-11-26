@@ -9,6 +9,14 @@ export function generateStaticParams() {
   return HOA_GUIDES.map((g) => ({ slug: g.slug }));
 }
 
+function fitTitle(text: string, maxLen = 51): string {
+  if (text.length <= maxLen) return text;
+  const cut = text.slice(0, maxLen - 1);
+  const lastSpace = cut.lastIndexOf(' ');
+  const base = lastSpace > Math.floor(maxLen * 0.5) ? cut.slice(0, lastSpace) : cut;
+  return `${base.replace(/[\s—–:;,.-]+$/, '')}…`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -18,7 +26,7 @@ export async function generateMetadata({
   const g = GUIDES_BY_SLUG[slug];
   if (!g) return {};
   return {
-    title: g.title,
+    title: fitTitle(g.title, 51),
     description: g.description,
     alternates: { canonical: `/guides/${g.slug}/` }
   };

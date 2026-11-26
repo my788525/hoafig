@@ -4,7 +4,7 @@ import SelectiveEnforcementAnalyzer from '@/components/calculators/SelectiveEnfo
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'HOA Violation Notice & Selective Enforcement Forensics Analyzer (2026)',
+  title: 'Selective Enforcement & Notice Analyzer (2026)',
   description:
     'Score HOA violation notice voidability (0-100), audit independent fining committee compliance, document unpenalized neighbors, and export a hearing brief & .ics deadline.',
   alternates: { canonical: '/calculators/selective-enforcement-analyzer/' },

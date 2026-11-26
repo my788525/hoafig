@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { JsonLd, breadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Cookies, Google AdSense, GDPR & CCPA',
+  title: 'Privacy Policy — Cookies, AdSense & GDPR/CCPA',
   description:
     'HOAFig.com privacy policy: 100% client-side computation, Google AdSense & DART cookie disclosures, and GDPR/CCPA user privacy rights.',
   alternates: { canonical: '/privacy/' }

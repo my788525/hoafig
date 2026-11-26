@@ -18,7 +18,7 @@ export async function generateMetadata({
   const s = STATUTES_BY_SLUG[state];
   if (!s) return {};
   return {
-    title: `${s.name} HOA Fine Caps, Hearing Rights & Statutes (2026)`,
+    title: `${s.name} HOA Fine Caps & Law (2026)`,
     description: `${s.name} (${s.abbr}) HOA fine compliance rules under ${s.primaryStatute}. View fine caps, ${s.mandatoryNoticeDays}-day notice / ${s.mandatoryCureDays}-day cure windows, and solar/EV overrides.`,
     alternates: { canonical: `/states/${s.slug}/` }
   };

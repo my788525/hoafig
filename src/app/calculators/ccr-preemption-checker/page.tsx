@@ -4,7 +4,7 @@ import CcrPreemptionChecker from '@/components/calculators/CcrPreemptionChecker'
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'HOA CC&R vs. State & Federal Law Preemption Checker (2026)',
+  title: 'CC&R vs. State & Federal Law Checker (2026)',
   description:
     'Check whether federal FCC OTARD (47 CFR § 1.4000), U.S. Flag Act, or state Solar, EV, Xeriscaping, and Right-to-Dry statutes override your HOA CC&Rs.',
   alternates: { canonical: '/calculators/ccr-preemption-checker/' },

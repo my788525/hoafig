@@ -4,7 +4,7 @@ import SpecialAssessmentClient from './SpecialAssessmentClient';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'HOA Special Assessment & Reserve Shortfall Calculator (2026)',
+  title: 'HOA Special Assessment Calculator (2026)',
   description:
     'Calculate per-unit HOA special assessment exposure, reserve study percent-funded ratio, monthly dues spike, and state homeowner-vote thresholds.',
   alternates: { canonical: '/calculators/special-assessment-calculator/' }

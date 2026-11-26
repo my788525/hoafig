@@ -8,7 +8,7 @@ import HiddenTrapsCallout from '@/components/HiddenTrapsCallout';
 import { JsonLd, datasetJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'HOAFig — U.S. HOA Fine Compliance, Special Assessment & Board Hearing Defense',
+  title: { absolute: 'HOAFig — 2026 US HOA Fine & Hearing Defense' },
   description:
     'Audit HOA fines, late-fee stacking, special assessments, and solar/EV ARC denials against 2026 primary state statutes across all 50 states and D.C.',
   alternates: { canonical: '/' }

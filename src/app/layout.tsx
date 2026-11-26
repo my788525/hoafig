@@ -24,7 +24,7 @@ const siteUrl = 'https://hoafig.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'HOAFig — U.S. HOA Fine Compliance, Special Assessment & Hearing Defense',
+    default: 'HOAFig — 2026 US HOA Fine & Hearing Defense',
     template: '%s | HOAFig'
   },
   description:

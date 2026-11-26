@@ -4,7 +4,7 @@ import ArcOverrideClient from './ArcOverrideClient';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'HOA Solar, EV Charger & FCC OTARD Override Checker (2026)',
+  title: 'Solar, EV & FCC OTARD Override Checker (2026)',
   description:
     'Check if federal FCC OTARD (47 C.F.R. § 1.4000) or state Solar Access and EV Right-to-Charge statutes override your HOA architectural denial.',
   alternates: { canonical: '/calculators/arc-override-checker/' }

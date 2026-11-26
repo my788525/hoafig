@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { JsonLd, breadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'HOA Statutory Compliance Calculators & Auditors (2026)',
+  title: 'HOA Compliance Calculators & Auditors (2026)',
   description:
     'Six executive HOA compliance calculators for auditing violation fines, special assessments, late-fee stacking, selective enforcement, and solar/EV/OTARD ARC denials.',
   alternates: { canonical: '/calculators/' }

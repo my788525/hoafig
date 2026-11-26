@@ -4,7 +4,7 @@ import HoaDisputeWizard from '@/components/HoaDisputeWizard';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: '4-Step HOA Dispute & Board Hearing Strategy Wizard (2026)',
+  title: '4-Step HOA Dispute & Hearing Wizard (2026)',
   description:
     'Guided 4-step HOA dispute wizard covering all 50 states and D.C. Audit violation fines, solar/EV/OTARD ARC denials, special assessments, and late-fee stacking.',
   alternates: { canonical: '/wizard/' }

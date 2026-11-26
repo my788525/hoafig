@@ -4,7 +4,7 @@ import { HOA_STATUTES_2026 } from '@/data/hoa_statutes_2026';
 import { JsonLd, datasetJsonLd, breadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: '51-State HOA Fine Caps, Cure Periods & Solar/EV Statutes (2026)',
+  title: '51-State HOA Fine Caps & Statutes (2026)',
   description:
     'Complete 2026 directory of U.S. HOA and condominium fining statutes across all 50 states and D.C., including fine caps, hearing rights, and official .gov code links.',
   alternates: { canonical: '/states/' }

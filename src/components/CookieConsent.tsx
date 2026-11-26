@@ -5,18 +5,81 @@ import Link from 'next/link';
 
 const STORAGE_KEY = 'hoafig_cookie_consent_v1';
 
+const EU_UK_CH_COUNTRIES = new Set([
+  'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR',
+  'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL',
+  'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'CH', 'GB', 'UK'
+]);
+
+const US_PRIVACY_STATES = new Set([
+  'CA', 'VA', 'CO', 'CT', 'UT', 'TX', 'OR', 'MT', 'FL', 'IA', 'IN', 'TN',
+  'DE', 'NE', 'NH', 'NJ', 'MN', 'MD', 'KY', 'RI'
+]);
+
+function shouldShowForGeo(country: string, regionCode: string): boolean {
+  const c = country.trim().toUpperCase();
+  const r = regionCode.trim().toUpperCase();
+  if (EU_UK_CH_COUNTRIES.has(c)) return true;
+  if (c === 'US' && US_PRIVACY_STATES.has(r)) return true;
+  return false;
+}
+
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (!saved) {
-        setVisible(true);
-      }
+      if (saved) return;
     } catch {
       // Ignore storage access errors in restricted browsing modes
+      return;
     }
+
+    let cancelled = false;
+
+    const fetchWithTimeout = async (url: string) => {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 2000);
+      try {
+        return await fetch(url, { cache: 'no-store', signal: controller.signal });
+      } finally {
+        clearTimeout(timer);
+      }
+    };
+
+    (async () => {
+      try {
+        const res = await fetchWithTimeout('/api/geo');
+        if (res.ok) {
+          const data = (await res.json()) as { country?: string; regionCode?: string };
+          if (!cancelled && shouldShowForGeo(data.country || '', data.regionCode || '')) {
+            setVisible(true);
+          }
+          return;
+        }
+      } catch {
+        // Fall through to /cdn-cgi/trace fallback
+      }
+
+      try {
+        const traceRes = await fetchWithTimeout('/cdn-cgi/trace');
+        if (traceRes.ok) {
+          const text = await traceRes.text();
+          const match = text.match(/^loc=([A-Z]{2})$/m);
+          const loc = match?.[1]?.toUpperCase() || '';
+          if (!cancelled && EU_UK_CH_COUNTRIES.has(loc)) {
+            setVisible(true);
+          }
+        }
+      } catch {
+        // Geo lookup failed; keep banner hidden
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const handleChoice = (choice: 'accepted' | 'essential') => {

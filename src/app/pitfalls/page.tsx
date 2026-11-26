@@ -5,7 +5,7 @@ import ToolPaywallDossier from '@/components/ToolPaywallDossier';
 import { JsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'HOA Pitfalls, Black Holes & Homeowner Survival Playbook (2026)',
+  title: 'HOA Pitfalls & Survival Playbook (2026)',
   description:
     '6 real-case HOA traps that cost homeowners thousands—from withholding monthly dues and portal chat waivers to illegal fine interest and 1990s CC&R bluffs—and the exact statutory survival moves.',
   alternates: { canonical: '/pitfalls/' }
