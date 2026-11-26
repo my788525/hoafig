@@ -778,6 +778,30 @@ export default function HoaDisputeWizard() {
           {/* Contextual 3-Trap Survival Callout */}
           <HiddenTrapsCallout />
 
+          {/* Dynamic ROI Value Anchor Banner */}
+          <div className="no-print rounded-2xl border-2 border-[#c8a24a] bg-gradient-to-r from-[#091a32] to-[#0f2747] p-5 text-white shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="text-[11px] font-extrabold uppercase tracking-wider text-[#e2c275]">
+                Dynamic ROI Value Anchor
+              </div>
+              <div className="text-lg sm:text-xl font-extrabold">
+                Defending ${amount.toLocaleString()} Exposure for $29.99 ={' '}
+                <span className="text-[#e2c275] tabular-nums">
+                  {Math.max(1, Math.round(amount / 29.99))}x ROI
+                </span>
+              </div>
+              <p className="text-xs text-slate-300">
+                Compare your ${amount.toLocaleString()} disputed exposure against the $29.99 Board Hearing &amp; Certified Demand Kit—fraction of a single $300/hr HOA attorney consultation.
+              </p>
+            </div>
+            <div className="shrink-0 rounded-xl bg-[#c8a24a]/20 border border-[#c8a24a]/50 px-4 py-2.5 text-center">
+              <div className="text-[10px] font-mono uppercase tracking-wider text-[#e2c275]">Leverage Ratio</div>
+              <div className="text-2xl font-black text-white tabular-nums">
+                {Math.max(1, Math.round(amount / 29.99))}x
+              </div>
+            </div>
+          </div>
+
           {/* Matched Dodo Digital Product via ToolPaywallDossier */}
           <ToolPaywallDossier
             badge={`Matched Kit: ${matchedKit.badge}`}
