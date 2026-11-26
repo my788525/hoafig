@@ -4,7 +4,7 @@
 
 This is the machine-readable companion to https://hoafig.com/llms.txt.
 Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.txt · https://hoafig.com/sitemap.xml
-## Complete page index (80 pages)
+## Complete page index (82 pages)
 
 ### Home
 - [HOAFig — U.S. HOA Fine Compliance, Special Assessment & Board Hearing Defense](https://hoafig.com/)
@@ -33,6 +33,12 @@ Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.t
 ### /contact
 - [Contact & Statutory Corrections | HOAFig](https://hoafig.com/contact/)
 
+### /disclaimer
+- [Legal Disclaimer & Statutory Information Notice | HOAFig](https://hoafig.com/disclaimer/)
+
+### /editorial-policy
+- [Editorial Policy & Statutory Verification Standards | HOAFig](https://hoafig.com/editorial-policy/)
+
 ### /guides
 - [HOA Defense Guides & Statutory Playbooks (2026) | HOAFig](https://hoafig.com/guides/)
 - [How to Fight an HOA Fine: 2026 Statutory Defense Playbook | HOAFig](https://hoafig.com/guides/how-to-fight-an-hoa-fine/)
@@ -49,7 +55,7 @@ Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.t
 - [HOA Pitfalls, Black Holes & Homeowner Survival Playbook (2026) | HOAFig](https://hoafig.com/pitfalls/)
 
 ### /privacy
-- [Privacy Policy | HOAFig](https://hoafig.com/privacy/)
+- [Privacy Policy — Cookies, Google AdSense, GDPR & CCPA | HOAFig](https://hoafig.com/privacy/)
 
 ### /states
 - [51-State HOA Fine Caps, Cure Periods & Solar/EV Statutes (2026) | HOAFig](https://hoafig.com/states/)

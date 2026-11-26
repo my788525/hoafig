@@ -5,7 +5,7 @@ import { JsonLd, breadcrumbJsonLd } from '@/components/JsonLd';
 export const metadata: Metadata = {
   title: 'HOA Statutory Compliance Calculators & Auditors (2026)',
   description:
-    'Four executive HOA compliance calculators for auditing violation fines, special assessments, late-fee stacking, and solar/EV/OTARD ARC denials.',
+    'Six executive HOA compliance calculators for auditing violation fines, special assessments, late-fee stacking, selective enforcement, and solar/EV/OTARD ARC denials.',
   alternates: { canonical: '/calculators/' }
 };
 
@@ -50,19 +50,22 @@ const TOOLS = [
 
 export default function CalculatorsIndexPage() {
   return (
-    <div className="container-exec py-10 space-y-8">
+    <div className="container-exec py-10 space-y-10">
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Home', url: '/' },
           { name: 'Calculators', url: '/calculators/' }
         ])}
       />
-      <div className="space-y-2">
+      <div className="space-y-3">
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-[#0f2747]/10 text-[#0f2747]">
+          51-Jurisdiction Interactive Workbenches
+        </span>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0f2747]">
           HOA Compliance Calculators &amp; Auditors
         </h1>
-        <p className="text-slate-600 max-w-2xl text-sm sm:text-base">
-          Select a statutory workbench below. All calculations run 100% in-browser with printable Board Hearing Briefs and Certified Mail templates.
+        <p className="text-slate-600 max-w-3xl text-sm sm:text-base leading-relaxed">
+          Select a statutory workbench below to audit your HOA notice, financial ledger, or architectural denial. Every calculator runs 100% locally in your browser with zero cloud upload and generates a printable Board Hearing Brief citing your exact 2026 state code.
         </p>
       </div>
 
@@ -84,6 +87,49 @@ export default function CalculatorsIndexPage() {
           </Link>
         ))}
       </div>
+
+      <section className="brief-card p-6 sm:p-8 space-y-5 text-sm sm:text-base text-slate-700 leading-relaxed">
+        <h2 className="text-xl font-extrabold text-[#0f2747]">
+          How to Choose the Right HOA Compliance Workbench
+        </h2>
+        <p>
+          Community association disputes rarely involve a single isolated issue. A routine exterior maintenance letter often escalates into daily accrued fines, compounded administrative late fees, and an improper payment-waterfall allocation that makes your regular monthly assessments appear delinquent. Using the right diagnostic tool prevents you from conceding leverage before your board hearing.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+          <div className="space-y-2">
+            <h3 className="font-extrabold text-[#0f2747]">1. Violation Fines &amp; Hearing Deadlines</h3>
+            <p className="text-sm text-slate-600">
+              Start with the <strong>HOA Fine Compliance &amp; Statutory Cap Checker</strong> if you received a monetary penalty or daily fine notice. It cross-checks per-violation caps, aggregate ceilings, mandatory advance notice days, cure windows, and independent fining committee rules. If your notice lacks specific covenant citations or neighbors have identical unpenalized conditions, pair it with the <strong>Selective Enforcement Analyzer</strong> to build a neighbor-comparator log and download an <code className="bg-slate-100 px-1 rounded text-xs">.ics</code> hearing deadline reminder.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <h3 className="font-extrabold text-[#0f2747]">2. Ledgers, Late Fees, &amp; Special Assessments</h3>
+            <p className="text-sm text-slate-600">
+              Use the <strong>HOA Late Fee &amp; Payment Priority Auditor</strong> whenever your account statement shows interest, collection charges, or late fees stacked onto a disputed fine, or when your regular dues payment was diverted to pay off a contested penalty. For sudden capital calls—such as roof replacements, structural milestone inspections, or paving shortfalls—run the <strong>Special Assessment &amp; Reserve Shortfall Estimator</strong> to verify percent-funded ratios and statutory member-vote thresholds.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <h3 className="font-extrabold text-[#0f2747]">3. Solar, EV Chargers, &amp; CC&amp;R Preemption</h3>
+            <p className="text-sm text-slate-600">
+              When an Architectural Review Committee (ARC) rejects rooftop solar panels, Level 2 EV charging stations, satellite dishes, fixed wireless antennas, drought-tolerant landscaping, or clotheslines, recorded CC&amp;Rs are frequently overridden by higher law. Run the <strong>ARC Solar, EV &amp; OTARD Override Checker</strong> or the <strong>CC&amp;R Preemption Checker</strong> to identify binding federal FCC regulations and state Right-to-Charge statutes.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <h3 className="font-extrabold text-[#0f2747]">4. Full-Dispute Guided Triage</h3>
+            <p className="text-sm text-slate-600">
+              Not sure which statute applies first? Launch our{' '}
+              <Link href="/wizard/" className="text-[#0f2747] font-bold underline">
+                HOA Dispute Triage Wizard
+              </Link>{' '}
+              to walk through your notice date, state code, and dispute branch in under three minutes, or review our{' '}
+              <Link href="/methodology/" className="text-[#0f2747] font-bold underline">
+                Statutory Audit Methodology
+              </Link>{' '}
+              to see how every calculation is verified against primary 2026 state codes.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

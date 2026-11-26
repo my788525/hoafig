@@ -813,6 +813,9 @@ export default function HoaDisputeWizard() {
                 return (
                   <div
                     key={tier.id}
+                    data-matrix-offer="1"
+                    data-offer-slot="inline"
+                    data-offer-id={tier.pid}
                     className={`brief-card p-6 flex flex-col justify-between gap-5 ${
                       isMatch ? 'border-2 border-[#c8a24a] ring-2 ring-[#c8a24a]/20' : ''
                     }`}
@@ -848,6 +851,8 @@ export default function HoaDisputeWizard() {
                       href={checkoutUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-offer-action="buy"
+                      data-offer-id={tier.pid}
                       className={`w-full inline-flex items-center justify-center px-4 py-3 rounded-xl text-xs font-extrabold transition ${
                         isMatch
                           ? 'bg-[#c8a24a] hover:bg-[#e2c275] text-[#091a32] shadow-sm'

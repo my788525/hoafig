@@ -24,11 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pitfalls/',
     '/statutes/',
     '/methodology/',
+    '/editorial-policy/',
     '/changelog/',
     '/about/',
     '/contact/',
     '/privacy/',
-    '/terms/'
+    '/terms/',
+    '/disclaimer/'
   ];
 
   const routes: MetadataRoute.Sitemap = staticRoutes.map((r) => ({

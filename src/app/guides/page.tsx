@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function GuidesIndexPage() {
   return (
-    <div className="container-exec py-10 space-y-8">
+    <div className="container-exec py-10 space-y-10">
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Home', url: '/' },
@@ -20,12 +20,15 @@ export default function GuidesIndexPage() {
         ])}
       />
 
-      <div className="space-y-2">
+      <div className="space-y-3">
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-[#0f2747]/10 text-[#0f2747]">
+          2026 Homeowner Playbooks
+        </span>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0f2747]">
           Homeowner Statutory Defense Guides
         </h1>
-        <p className="text-slate-600 max-w-3xl text-sm sm:text-base">
-          Actionable legal-compliance playbooks with Direct Answer tables and primary statutory citations.
+        <p className="text-slate-600 max-w-3xl text-sm sm:text-base leading-relaxed">
+          Actionable legal-compliance playbooks with Direct Answer tables, evidentiary checklists, certified-mail timelines, and primary statutory citations across all 51 U.S. jurisdictions.
         </p>
       </div>
 
@@ -48,6 +51,33 @@ export default function GuidesIndexPage() {
           </Link>
         ))}
       </div>
+
+      <section className="brief-card p-6 sm:p-8 space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+        <h2 className="text-xl font-extrabold text-[#0f2747]">
+          Building a Statutory Paper Trail Before Your Board Hearing
+        </h2>
+        <p>
+          Most homeowners lose HOA enforcement hearings not because their underlying conduct was unreasonable, but because they appear at a 5-minute board or fining-committee meeting with verbal complaints instead of a statutory paper trail. Boards and property managers respond to documented procedural defects—missing cure periods, unrecorded rule amendments, conflicted committee members, and disparate enforcement logs—because those defects create immediate reversal risk in mediation, arbitration, or small-claims court.
+        </p>
+        <p>
+          Each playbook in our library is structured around three practical phases: (1) <strong>Preserving the Record</strong> via timely written hearing requests and statutory records-inspection demands; (2) <strong>Auditing Procedural &amp; Quantitative Compliance</strong> against your state&apos;s enacted property code; and (3) <strong>Delivering a Concise Hearing Brief</strong> by certified mail so every objection is preserved in the association&apos;s official minutes.
+        </p>
+        <p>
+          Pair these guides with our interactive{' '}
+          <Link href="/calculators/" className="text-[#0f2747] font-bold underline">
+            Compliance Calculators
+          </Link>{' '}
+          and{' '}
+          <Link href="/states/" className="text-[#0f2747] font-bold underline">
+            51-State Statute Directory
+          </Link>{' '}
+          to verify exact notice days and dollar caps for your jurisdiction, or review our{' '}
+          <Link href="/pitfalls/" className="text-[#0f2747] font-bold underline">
+            HOA Pitfalls &amp; Traps Playbook
+          </Link>{' '}
+          to avoid common ledger traps like paying a contested fine before your hearing.
+        </p>
+      </section>
     </div>
   );
 }

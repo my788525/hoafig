@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function CasesIndexPage() {
   return (
-    <div className="container-exec py-10 space-y-8">
+    <div className="container-exec py-10 space-y-10">
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Home', url: '/' },
@@ -20,12 +20,15 @@ export default function CasesIndexPage() {
         ])}
       />
 
-      <div className="space-y-2">
+      <div className="space-y-3">
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-[#0f2747]/10 text-[#0f2747]">
+          Forensic Ledger Audits
+        </span>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0f2747]">
           Real-Ledger HOA Statutory Defense Case Studies
         </h1>
-        <p className="text-slate-600 max-w-3xl text-sm sm:text-base">
-          Forensic breakdowns of actual HOA violation ledgers audited against state statutory caps, independent committee rules, and certified-mail mandates.
+        <p className="text-slate-600 max-w-3xl text-sm sm:text-base leading-relaxed">
+          Forensic breakdowns of actual HOA violation ledgers audited against state statutory caps, independent committee rules, payment-waterfall protections, and certified-mail mandates.
         </p>
       </div>
 
@@ -53,6 +56,33 @@ export default function CasesIndexPage() {
           </Link>
         ))}
       </div>
+
+      <section className="brief-card p-6 sm:p-8 space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+        <h2 className="text-xl font-extrabold text-[#0f2747]">
+          What Forensic Ledger Audits Reveal About HOA Enforcement
+        </h2>
+        <p>
+          When homeowners inspect a four-figure HOA balance sheet line by line, the underlying violation is rarely the largest component of the demand. Instead, inflated ledgers are typically built from three recurring statutory errors: (1) exceeding state per-violation or aggregate fine caps; (2) skipping mandatory procedural steps such as certified-mail notice, cure windows, or an independent 3-member fining committee hearing; and (3) stacking unauthorized late fees, interest, or collection charges onto contested fines.
+        </p>
+        <p>
+          In each anonymized case study above, we walk through the exact ledger entries, the date-stamped notice timeline, the governing state statute (such as <code className="bg-slate-100 px-1.5 py-0.5 rounded text-xs">Fla. Stat. § 720.305</code>, <code className="bg-slate-100 px-1.5 py-0.5 rounded text-xs">Cal. Civ. Code § 5850</code>, and <code className="bg-slate-100 px-1.5 py-0.5 rounded text-xs">Tex. Prop. Code § 209.006</code>), and the exact statutory objection that forced a zero-dollar write-off.
+        </p>
+        <p>
+          To audit your own statement using the same forensic rules, open our{' '}
+          <Link href="/calculators/hoa-late-fee-auditor/" className="text-[#0f2747] font-bold underline">
+            Late Fee &amp; Payment Priority Auditor
+          </Link>{' '}
+          or{' '}
+          <Link href="/calculators/hoa-fine-compliance/" className="text-[#0f2747] font-bold underline">
+            HOA Fine Compliance Checker
+          </Link>
+          . All case studies are anonymized under our{' '}
+          <Link href="/editorial-policy/" className="text-[#0f2747] font-bold underline">
+            Editorial Policy
+          </Link>
+          .
+        </p>
+      </section>
     </div>
   );
 }

@@ -41,11 +41,13 @@ export default function Footer() {
           <h4 className="text-xs font-bold uppercase tracking-wider text-[#e2c275]">Governance &amp; Legal</h4>
           <ul className="space-y-1.5 text-xs">
             <li><Link href="/methodology/" className="hover:text-white transition">Audit Methodology</Link></li>
+            <li><Link href="/editorial-policy/" className="hover:text-white transition">Editorial Policy</Link></li>
             <li><Link href="/changelog/" className="hover:text-white transition">2026 Statutory Changelog</Link></li>
             <li><Link href="/about/" className="hover:text-white transition">About HOAFig</Link></li>
             <li><Link href="/contact/" className="hover:text-white transition">Contact &amp; Corrections</Link></li>
             <li><Link href="/privacy/" className="hover:text-white transition">Privacy Policy</Link></li>
             <li><Link href="/terms/" className="hover:text-white transition">Terms of Use</Link></li>
+            <li><Link href="/disclaimer/" className="hover:text-white transition">Legal Disclaimer</Link></li>
           </ul>
         </div>
       </div>
