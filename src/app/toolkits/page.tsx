@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 };
 
 const CHECKOUT_URL = 'https://checkout.dodopayments.com/buy/pdt_0NsmkloFUuNMrFIQIYxtQ?src=toolkits_hub';
+const B2B_CHECKOUT_URL =
+  'https://checkout.dodopayments.com/buy/pdt_0NrujTQMAWzTIJb4VscRu?src=toolkits_hub&b2b_site=hoafig.com';
 
 const FAQS = [
   {
@@ -51,6 +53,12 @@ const collectionPageJsonLd = {
         position: 1,
         url: 'https://hoafig.com/toolkits/#vip-suite-2026',
         name: '50-State HOA Fine Compliance & Board Hearing Defense VIP Suite (2026)'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        url: 'https://hoafig.com/toolkits/#commercial-license-2026',
+        name: 'Property Manager, CAM & HOA Board Multi-Community Commercial License ($99)'
       }
     ]
   }
@@ -68,18 +76,35 @@ const productJsonLd = {
     name: 'HOAFig'
   },
   category: 'Legal & Financial Compliance Templates',
-  offers: {
-    '@type': 'Offer',
-    url: CHECKOUT_URL,
-    priceCurrency: 'USD',
-    price: '24.99',
-    priceValidUntil: '2026-12-31',
-    availability: 'https://schema.org/InStock',
-    seller: {
-      '@type': 'Organization',
-      name: 'HOAFig'
+  offers: [
+    {
+      '@type': 'Offer',
+      name: '50-State HOA Fine Compliance & Board Hearing Defense VIP Suite (2026) — Homeowner License',
+      url: CHECKOUT_URL,
+      priceCurrency: 'USD',
+      price: '24.99',
+      priceValidUntil: '2026-12-31',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'HOAFig'
+      }
+    },
+    {
+      '@type': 'Offer',
+      name: 'Property Manager, CAM & HOA Board Multi-Community Commercial License',
+      sku: 'pdt_0NrujTQMAWzTIJb4VscRu',
+      url: B2B_CHECKOUT_URL,
+      priceCurrency: 'USD',
+      price: '99.00',
+      priceValidUntil: '2026-12-31',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'HOAFig'
+      }
     }
-  }
+  ]
 };
 
 export default function ToolkitsPage() {
@@ -241,6 +266,89 @@ export default function ToolkitsPage() {
             <div className="pt-2 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
               <span>Compatible with Word, Excel, Google Docs &amp; Sheets</span>
               <span className="text-emerald-400 font-semibold">2026 Edition</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* B2B Commercial Multi-Client License Tier */}
+      <section
+        id="commercial-license-2026"
+        className="bg-white border-2 border-[#0f2747] rounded-2xl p-6 sm:p-8 shadow-lg relative overflow-hidden"
+        data-matrix-offer="1"
+        data-offer-slot="store_b2b_tier"
+        data-offer-id="pdt_0NrujTQMAWzTIJb4VscRu"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div className="lg:col-span-8 space-y-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-[#0f2747] text-[#e2c275]">
+                B2B Commercial Multi-Client License
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#c8a24a]/15 text-[#0f2747] border border-[#c8a24a]/40">
+                Property Managers · CAMs · HOA Boards
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-slate-100 text-slate-600 border border-slate-200">
+                SKU: pdt_0NrujTQMAWzTIJb4VscRu
+              </span>
+            </div>
+
+            <h2 className="text-xl sm:text-2xl font-extrabold text-[#0f2747] tracking-tight leading-snug">
+              Property Manager, CAM &amp; HOA Board Multi-Community Commercial License
+            </h2>
+
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+              <li className="flex items-start gap-2">
+                <span className="text-[#059669] font-black mt-0.5">✓</span>
+                <span>
+                  <strong className="text-[#0f2747]">Unlimited associations &amp; properties</strong>, hearing-defense
+                  notices &amp; reserve audit workbooks (vs.{' '}
+                  <span className="line-through text-slate-500">$350+/hr</span> HOA general counsel)
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#059669] font-black mt-0.5">✓</span>
+                <span>
+                  <strong className="text-[#0f2747]">Editable .DOCX certified-mail templates</strong> +{' '}
+                  <strong className="text-[#0f2747]">.XLSX reserve &amp; fine-cap audit workbook</strong>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#059669] font-black mt-0.5">✓</span>
+                <span>
+                  <strong className="text-[#0f2747]">100% business-expense deductible invoice receipt</strong> · One-time{' '}
+                  <strong className="text-[#0f2747]">$99</strong> (no subscription)
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-4 bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-4 text-center lg:text-left">
+            <div>
+              <div className="text-[11px] font-mono uppercase tracking-wider text-slate-500">
+                Commercial Multi-Community License
+              </div>
+              <div className="flex items-baseline justify-center lg:justify-start gap-2.5 mt-1">
+                <span className="text-sm font-bold text-slate-400 line-through">$350+/hr</span>
+                <span className="text-3xl font-black text-[#0f2747] tabular-nums">$99</span>
+                <span className="text-[11px] font-bold text-[#059669] bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+                  One-Time · No Subscription
+                </span>
+              </div>
+            </div>
+
+            <a
+              href={B2B_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center px-5 py-3 rounded-xl bg-[#0f2747] hover:bg-[#193a66] text-[#e2c275] text-sm font-extrabold transition shadow-md"
+            >
+              Get Commercial License ($99) →
+            </a>
+
+            <div className="text-[11px] text-slate-500 font-mono space-y-0.5">
+              <div>✓ Instant Download · Tax-Deductible Receipt</div>
+              <div>✓ Unlimited Associations · 30-Day Guarantee</div>
             </div>
           </div>
         </div>
