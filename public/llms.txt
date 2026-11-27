@@ -11,6 +11,7 @@
 - **Special Assessment & Reserve Shortfall Estimator**: https://hoafig.com/calculators/special-assessment-calculator/
 - **HOA Late Fee & Payment Priority Auditor**: https://hoafig.com/calculators/hoa-late-fee-auditor/
 - **ARC Solar, EV & FCC OTARD Statutory Override Checker**: https://hoafig.com/calculators/arc-override-checker/
+- **2027 HOA $100 Cap & 21-Day Rule Audit (Effective Jan 1, 2027)**: https://hoafig.com/calculators/2027-hoa-rule-fine-audit/ (Minnesota HF 1268 / SF 1750 effective Jan 1, 2027, California Civ. Code § 5850, and Florida § 720.305)
 
 ## Jurisdictional Coverage
 - **51 State & DC HOA Statutory Dossiers**: https://hoafig.com/states/
