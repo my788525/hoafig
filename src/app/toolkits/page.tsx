@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
+import ToolkitHeroControls from '@/components/ToolkitHeroControls';
+import { HOA_STATUTES_2026 } from '@/data/hoa_statutes_2026';
 
 export const metadata: Metadata = {
   title: 'VIP HOA Defense Toolkits & Templates (2026)',
@@ -81,6 +83,13 @@ const productJsonLd = {
 };
 
 export default function ToolkitsPage() {
+  const stateOptions = HOA_STATUTES_2026.map((s) => ({
+    abbr: s.abbr,
+    name: s.name,
+    primaryStatute: s.primaryStatute,
+    capSummary: s.capSummary
+  }));
+
   return (
     <div className="container-exec py-10 space-y-10">
       <JsonLd data={collectionPageJsonLd} />
@@ -132,8 +141,11 @@ export default function ToolkitsPage() {
           {/* Left: Product Overview & Pricing */}
           <div className="lg:col-span-7 space-y-5">
             <div className="flex flex-wrap items-center gap-2">
+              <span className="px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-[#c8a24a] text-[#091a32] shadow-md">
+                ★ MOST POPULAR · 90%+ CHOOSE THIS
+              </span>
               <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-[#c8a24a]/20 text-[#e2c275] border border-[#c8a24a]/40">
-                ★ Flagship 2026 VIP Suite
+                Flagship 2026 VIP Suite
               </span>
               <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#059669]/20 text-emerald-300 border border-[#059669]/40">
                 50 States + D.C. Verified
@@ -173,32 +185,8 @@ export default function ToolkitsPage() {
               </div>
             </div>
 
-            {/* Direct Instant Buy CTA + Secondary Tool Links */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
-              <a
-                href={CHECKOUT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-offer-action="buy"
-                data-offer-id="pdt_0NsmkloFUuNMrFIQIYxtQ"
-                className="inline-flex items-center justify-center bg-[#c8a24a] hover:bg-[#e2c275] text-[#091a32] font-extrabold px-7 py-4 rounded-xl text-sm sm:text-base transition shadow-lg text-center"
-              >
-                Instant Buy VIP Suite — $24.99 →
-              </a>
-              <Link
-                href="/calculators/hoa-fine-compliance/"
-                className="inline-flex items-center justify-center px-5 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-600 text-xs sm:text-sm font-bold transition text-center"
-              >
-                Run Free Fine Checker First
-              </Link>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-300 pt-1">
-              <span>Pay / GPay / All Major Cards via Dodo Payments</span>
-              <Link href="/wizard/" className="text-[#e2c275] hover:text-white underline font-semibold">
-                Or start with the 4-Step Dispute Wizard →
-              </Link>
-            </div>
+            {/* Interactive State Selector, Primary Instant Buy CTA, Sample Preview Modal & 3 Zero-Risk Badges */}
+            <ToolkitHeroControls checkoutUrl={CHECKOUT_URL} states={stateOptions} />
           </div>
 
           {/* Right: Exact Itemized "What's Inside" File Manifest */}
@@ -255,6 +243,33 @@ export default function ToolkitsPage() {
               <span className="text-emerald-400 font-semibold">2026 Edition</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Reverse Calculator Rescue Banner */}
+      <section className="rounded-2xl bg-gradient-to-r from-[#eef5f2] via-white to-[#fdf9ee] border border-[#059669]/30 p-5 sm:p-6 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div className="space-y-1">
+          <div className="text-[11px] font-bold uppercase tracking-wider text-[#059669]">
+            Free 30-Second Pre-Check · No Email Required
+          </div>
+          <p className="text-sm sm:text-base font-bold text-[#0f2747]">
+            Not sure if your HOA fine or special assessment violates state statutory caps? Run the 30-second free
+            calculator first →
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <Link
+            href="/calculators/hoa-fine-compliance/"
+            className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-[#0f2747] hover:bg-[#193a66] text-white text-xs sm:text-sm font-extrabold transition shadow-sm"
+          >
+            30-Sec Fine Cap Calculator →
+          </Link>
+          <Link
+            href="/wizard/"
+            className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-[#0f2747] border border-slate-300 text-xs sm:text-sm font-bold transition"
+          >
+            4-Step Dispute Wizard →
+          </Link>
         </div>
       </section>
 
