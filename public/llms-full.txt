@@ -4,7 +4,7 @@
 
 This is the machine-readable companion to https://hoafig.com/llms.txt.
 Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.txt · https://hoafig.com/sitemap.xml
-## Complete page index (82 pages)
+## Complete page index (83 pages)
 
 ### Home
 - [HOAFig — 2026 US HOA Fine & Hearing Defense](https://hoafig.com/)
@@ -116,6 +116,9 @@ Human-readable starting points: https://hoafig.com/ · https://hoafig.com/llms.t
 
 ### /terms
 - [Terms of Use & Legal Disclaimer | HOAFig](https://hoafig.com/terms/)
+
+### /toolkits
+- [VIP HOA Defense Toolkits & Templates (2026) | HOAFig](https://hoafig.com/toolkits/)
 
 ### /wizard
 - [4-Step HOA Dispute & Hearing Wizard (2026) | HOAFig](https://hoafig.com/wizard/)

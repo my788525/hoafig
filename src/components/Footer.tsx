@@ -34,6 +34,7 @@ export default function Footer() {
             <li><Link href="/cases/" className="hover:text-white transition">Real-Ledger Case Studies</Link></li>
             <li><Link href="/guides/" className="hover:text-white transition">Homeowner Defense Guides</Link></li>
             <li><Link href="/pitfalls/" className="hover:text-white transition">HOA Pitfalls &amp; Traps Playbook</Link></li>
+            <li><Link href="/toolkits/" className="hover:text-[#e2c275] transition font-semibold">VIP Defense Toolkits Store</Link></li>
           </ul>
         </div>
 

@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/cases/',
     '/guides/',
     '/pitfalls/',
+    '/toolkits/',
     '/statutes/',
     '/methodology/',
     '/editorial-policy/',
@@ -36,8 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = staticRoutes.map((r) => ({
     url: BASE + (r || '/'),
     lastModified: '2026-11-01',
-    changeFrequency: r === '' ? 'daily' : r === '/wizard/' || r.startsWith('/calculators/') || r === '/pitfalls/' ? 'weekly' : 'monthly',
-    priority: r === '' ? 1.0 : r === '/wizard/' ? 0.95 : r.startsWith('/calculators/') || r === '/pitfalls/' ? 0.9 : 0.8
+    changeFrequency: r === '' ? 'daily' : r === '/wizard/' || r.startsWith('/calculators/') || r === '/pitfalls/' || r === '/toolkits/' ? 'weekly' : 'monthly',
+    priority: r === '' ? 1.0 : r === '/wizard/' ? 0.95 : r.startsWith('/calculators/') || r === '/pitfalls/' || r === '/toolkits/' ? 0.9 : 0.8
   }));
 
   const stateRoutes: MetadataRoute.Sitemap = HOA_STATUTES_2026.map((s) => ({

@@ -23,7 +23,8 @@ const MOBILE_PRIMARY_LINKS = [
   { href: '/wizard/', label: 'Dispute Wizard' },
   ...CALCULATOR_LINKS,
   { href: '/states/', label: '51 States' },
-  { href: '/pitfalls/', label: 'Pitfalls & Traps' }
+  { href: '/pitfalls/', label: 'Pitfalls & Traps' },
+  { href: '/toolkits/', label: 'Toolkits' }
 ];
 
 function HoaFigCrest() {
@@ -154,6 +155,13 @@ export default function Navigation() {
             className="whitespace-nowrap text-sm font-semibold text-slate-100 hover:text-[#e2c275] transition"
           >
             Pitfalls &amp; Traps
+          </Link>
+
+          <Link
+            href="/toolkits/"
+            className="whitespace-nowrap text-sm font-semibold text-[#e2c275] hover:text-white transition"
+          >
+            Toolkits
           </Link>
 
           {/* Research Dropdown */}
