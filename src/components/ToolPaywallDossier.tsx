@@ -181,6 +181,24 @@ export default function ToolPaywallDossier({
         </div>
       )}
 
+      {/* Behavioral CRO: Zeigarnik 85% Progress + Loss Aversion + Statutory Window */}
+      <div className="mb-6 rounded-2xl bg-[#091a32]/90 border border-[#c8a24a]/35 p-4 space-y-2.5">
+        <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+          <span className="font-bold text-white">
+            Board Hearing Brief Readiness: <span className="text-[#e2c275]">85% Complete</span>
+          </span>
+          <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-300">
+            ⏳ 14–30 Day Cure / Hearing Clock · HOA Counsel: $350+/hr vs. {price}
+          </span>
+        </div>
+        <div className="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+          <div className="h-full w-[85%] rounded-full bg-gradient-to-r from-[#059669] via-[#e2c275] to-[#c8a24a]" />
+        </div>
+        <div className="text-[11px] text-amber-200/90 leading-snug">
+          <strong>⚠️ Daily Accrual &amp; Lien Warning:</strong> Missing the statutory hearing request window lets daily fines and collection fees compound unchecked.
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-5 flex justify-center">
           <div className="w-full max-w-[330px] bg-[#091a32] border border-slate-700 rounded-xl p-5 shadow-2xl">
