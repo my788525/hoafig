@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArcOverrideClient from './ArcOverrideClient';
+import StatutoryAuditStamp from '@/components/StatutoryAuditStamp';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -67,6 +68,8 @@ export default function ArcOverridePage() {
           Determine whether federal FCC OTARD preemption or state Solar Access / Right-to-Charge statutes void your HOA’s architectural denial or unreasonable placement conditions.
         </p>
       </div>
+
+      <StatutoryAuditStamp />
 
       <ArcOverrideClient />
 

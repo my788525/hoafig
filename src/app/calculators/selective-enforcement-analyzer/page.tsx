@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import SelectiveEnforcementAnalyzer from '@/components/calculators/SelectiveEnforcementAnalyzer';
+import StatutoryAuditStamp from '@/components/StatutoryAuditStamp';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -60,6 +61,8 @@ export default function SelectiveEnforcementPage() {
           Score your violation notice for procedural voidability (0–100), benchmark unpenalized neighbor comparators, generate a 5-point photo &amp; witness checklist, and export a printable Hearing Defense Brief plus calendar deadline.
         </p>
       </div>
+
+      <StatutoryAuditStamp />
 
       <SelectiveEnforcementAnalyzer />
 

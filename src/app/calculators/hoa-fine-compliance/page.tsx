@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import HoaFineComplianceClient from './HoaFineComplianceClient';
+import StatutoryAuditStamp from '@/components/StatutoryAuditStamp';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -56,7 +57,44 @@ export default function HoaFineCompliancePage() {
         </p>
       </div>
 
+      <StatutoryAuditStamp />
+
       <HoaFineComplianceClient />
+
+      <section className="brief-card p-6 sm:p-8 space-y-4 no-print">
+        <div className="space-y-1">
+          <div className="text-[11px] font-bold uppercase tracking-wider text-[#9a7622]">
+            Worked Verification Math Example
+          </div>
+          <h2 className="text-xl font-extrabold text-[#0f2747]">
+            Statutory Fine Cap &amp; Daily Accrual Audit Math
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-1.5">
+            <div className="font-extrabold text-[#0f2747]">
+              Example 1: California Non-Health/Safety Fine (Cal. Civ. Code § 5850)
+            </div>
+            <p>
+              An HOA bills <strong>$250/week × 4 weeks = $1,000</strong> for an unapproved mailbox paint color. Under Cal. Civ. Code § 5850, non-health/safety fines are capped at <strong>$100 per violation</strong>.
+            </p>
+            <p className="font-mono text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-1.5">
+              $1,000 billed − $100 statutory cap = $900 unlawful overcharge (or $1,000 void if 10-day § 5855 hearing notice was skipped).
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-1.5">
+            <div className="font-extrabold text-[#0f2747]">
+              Example 2: Florida Continuing Violation (Fla. Stat. § 720.305(2))
+            </div>
+            <p>
+              An HOA accrues <strong>$100/day × 18 days = $1,800</strong> for lawn edging. Florida § 720.305(2) caps continuing fines at <strong>$100/day up to $1,000 aggregate</strong> (unless governing documents expressly authorize more) and requires a <strong>14-day notice</strong> plus an <strong>independent 3-member committee</strong>.
+            </p>
+            <p className="font-mono text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-1.5">
+              $1,800 billed − $1,000 cap = $800 over-cap excess (100% void if independent committee was omitted).
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="brief-card p-6 sm:p-8 space-y-4 no-print">
         <h2 className="text-xl font-extrabold text-[#0f2747]">Frequently Asked Questions</h2>

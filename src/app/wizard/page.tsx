@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import HoaDisputeWizard from '@/components/HoaDisputeWizard';
+import StatutoryAuditStamp from '@/components/StatutoryAuditStamp';
 import ToolPaywallDossier from '@/components/ToolPaywallDossier';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
@@ -74,6 +75,8 @@ export default function WizardPage() {
           <strong className="text-[#0c2921]">Ballpark vs. Exact Audit:</strong> General state fine caps only give a rough ballpark—exact daily-accrual caps, cure-window defects, payment-waterfall violations, and ARC preemption must be calculated interactively on-site below.
         </p>
       </div>
+
+      <StatutoryAuditStamp />
 
       <HoaDisputeWizard />
 

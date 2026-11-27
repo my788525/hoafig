@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import LateFeeAuditorClient from './LateFeeAuditorClient';
+import StatutoryAuditStamp from '@/components/StatutoryAuditStamp';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -67,6 +68,8 @@ export default function LateFeeAuditorPage() {
           Verify whether your association illegally compounded late fees or interest onto disputed fines, or misapplied your regular monthly assessment payment toward fines first.
         </p>
       </div>
+
+      <StatutoryAuditStamp />
 
       <LateFeeAuditorClient />
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import CcrPreemptionChecker from '@/components/calculators/CcrPreemptionChecker';
+import StatutoryAuditStamp from '@/components/StatutoryAuditStamp';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -60,6 +61,8 @@ export default function CcrPreemptionPage() {
           Verify whether federal FCC OTARD (47 CFR § 1.4000), the U.S. Flag Act, or state Solar, EV Charger, Xeriscaping, and Right-to-Dry statutes void your HOA’s CC&amp;R restriction.
         </p>
       </div>
+
+      <StatutoryAuditStamp />
 
       <CcrPreemptionChecker />
 

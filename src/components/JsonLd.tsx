@@ -37,11 +37,19 @@ export function webSiteJsonLd() {
   };
 }
 
+const DEFAULT_STATUTORY_CITATIONS = [
+  'https://leginfo.legislature.ca.gov/',
+  'https://www.leg.state.fl.us/',
+  'https://statutes.capitol.texas.gov/'
+];
+
 export function webApplicationJsonLd(opts: {
   name: string;
   description: string;
   url: string;
   category?: string;
+  citation?: string[];
+  reviewedBy?: string;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -51,6 +59,12 @@ export function webApplicationJsonLd(opts: {
     url: `${BASE}${opts.url}`,
     applicationCategory: opts.category || 'Legal & Financial Compliance Utility',
     operatingSystem: 'All',
+    citation: opts.citation && opts.citation.length > 0 ? opts.citation : DEFAULT_STATUTORY_CITATIONS,
+    reviewedBy: {
+      '@type': 'Organization',
+      name: opts.reviewedBy || 'HOAFig Community Governance & Statutory Research Board',
+      url: `${BASE}/editorial-policy/`
+    },
     offers: {
       '@type': 'Offer',
       price: '0',

@@ -472,6 +472,26 @@ export default function ToolkitsPage() {
           ))}
         </div>
       </section>
+
+      {/* Non-Attorney Educational Disclaimer & Governance */}
+      <section className="rounded-2xl border border-slate-200 bg-slate-50 p-6 space-y-3 text-xs text-slate-600 leading-relaxed">
+        <div className="font-extrabold text-[#0f2747] uppercase tracking-wider text-[11px]">
+          Non-Attorney Educational Disclaimer &amp; Statutory Governance
+        </div>
+        <p>
+          HOAFig.com is an educational and statutory compliance research platform, not a law firm, and does not provide
+          legal advice or attorney-client representation. All templates, ledger workbooks, and statutory citations are
+          for educational and self-help documentation purposes; consult a licensed real estate or community association
+          attorney in your state for formal legal advice.
+        </p>
+        <div className="flex flex-wrap items-center gap-4 font-semibold text-[#0f2747] pt-1">
+          <Link href="/methodology/" className="hover:underline">Audit Methodology</Link>
+          <Link href="/editorial-policy/" className="hover:underline">Editorial Policy</Link>
+          <Link href="/changelog/" className="hover:underline">2026 Statutory Changelog</Link>
+          <Link href="/about/" className="hover:underline">About HOAFig</Link>
+          <Link href="/disclaimer/" className="hover:underline">Full Legal Disclaimer</Link>
+        </div>
+      </section>
     </div>
   );
 }

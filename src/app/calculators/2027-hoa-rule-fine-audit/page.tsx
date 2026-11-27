@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Hoa2027RuleAuditCalc from '@/components/calculators/Hoa2027RuleAuditCalc';
+import StatutoryAuditStamp from '@/components/StatutoryAuditStamp';
 import ToolPaywallDossier from '@/components/ToolPaywallDossier';
 import { JsonLd, breadcrumbJsonLd, faqJsonLd, webApplicationJsonLd } from '@/components/JsonLd';
 
@@ -50,6 +51,8 @@ export default function Hoa2027RuleAuditPage() {
           Verify HOA fines and new board rules against 2027 statutory reforms (including Minnesota HF 1268 / SF 1750, California Civ. Code § 5850, and Florida § 720.305).
         </p>
       </div>
+
+      <StatutoryAuditStamp />
 
       <Hoa2027RuleAuditCalc />
 

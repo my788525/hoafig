@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import SpecialAssessmentClient from './SpecialAssessmentClient';
+import StatutoryAuditStamp from '@/components/StatutoryAuditStamp';
 import { JsonLd, webApplicationJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -72,6 +73,8 @@ export default function SpecialAssessmentPage() {
         </p>
       </div>
 
+      <StatutoryAuditStamp />
+
       <SpecialAssessmentClient />
 
       {/* Statutory Formula & Audit Table */}
@@ -131,7 +134,7 @@ export default function SpecialAssessmentPage() {
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 no-print">
         <div className="brief-card p-6 space-y-3">
           <div className="text-[11px] font-bold uppercase tracking-wider text-[#9a7622]">
-            Real-Case Math Walkthrough
+            Worked Verification Math Example · Real-Case Walkthrough
           </div>
           <h3 className="text-lg font-extrabold text-[#0f2747]">
             160-Unit HOA: $480,000 Paving Assessment vs. 5% Cap

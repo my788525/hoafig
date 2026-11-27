@@ -11,8 +11,8 @@ export default function Footer() {
           <p className="text-xs text-slate-400 leading-relaxed">
             Institutional-grade U.S. HOA fine compliance, special assessment reserve auditing, and board hearing defense platform. Verified against 2026 state statutory codes across all 51 jurisdictions.
           </p>
-          <p className="text-[11px] text-slate-500">
-            Educational &amp; statutory compliance reference only; not a law firm or substitute for licensed legal counsel.
+          <p className="text-[11px] text-slate-300 leading-relaxed">
+            <strong>Non-Attorney Educational Disclaimer:</strong> Educational &amp; statutory compliance reference only; HOAFig.com is not a law firm and is not a substitute for licensed legal counsel.
           </p>
         </div>
 
